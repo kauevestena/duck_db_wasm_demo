@@ -38,8 +38,19 @@ import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0
 const MIN_ZOOM = 13;
 
 /* Load country list from external file */
-const countriesResponse = await fetch("countries.json");
-const countriesData = await countriesResponse.json();
+let countriesData;
+try {
+  const countriesResponse = await fetch("countries.json");
+  if(!countriesResponse.ok) throw new Error("HTTP " + countriesResponse.status);
+  countriesData = await countriesResponse.json();
+} catch(e) {
+  console.error("Failed to load countries.json:", e);
+  countriesData = {
+    url_template:"https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso={code}/*.parquet",
+    default_country:"USA",
+    countries:[]
+  };
+}
 
 const URL_TEMPLATE = countriesData.url_template;
 const DEFAULT_COUNTRY = countriesData.default_country;
@@ -103,6 +114,7 @@ function detectCountry(lon, lat){
     if(lon >= minLon && lon <= maxLon && lat >= minLat && lat <= maxLat){
       const w = maxLon - minLon;
       const h = maxLat - minLat;
+      if(w === 0 || h === 0) continue;
       const depth = Math.min(
         (lon - minLon) / w, (maxLon - lon) / w,
         (lat - minLat) / h, (maxLat - lat) / h
