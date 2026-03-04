@@ -174,7 +174,9 @@ async function loadBuildings(){
       properties:{}
     }));
 
-    map.getSource("buildings").setData({
+    const source = map.getSource("buildings");
+    if(!source) return;
+    source.setData({
       type:"FeatureCollection",
       features
     });
