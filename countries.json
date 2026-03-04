@@ -1,5 +1,5 @@
 {
-  "url_template": "https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso={code}/*.parquet",
+  "url_template": "https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso={code}/{code}.parquet",
   "default_country": "USA",
   "countries": [
     {
