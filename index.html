@@ -127,7 +127,9 @@ function detectCountry(lon, lat){
   return best || DEFAULT_COUNTRY;
 }
 
-/* Query */
+/* Query – stream results so buildings appear as they arrive */
+let currentQueryId = 0;
+
 async function loadBuildings(){
 
   if(!map.getSource("buildings")) return;
@@ -135,8 +137,12 @@ async function loadBuildings(){
   if(map.getZoom() < MIN_ZOOM){
     document.getElementById("status").innerText =
       "Zoom ≥ " + MIN_ZOOM;
+    map.getSource("buildings")
+      .setData({type:"FeatureCollection",features:[]});
     return;
   }
+
+  const queryId = ++currentQueryId;
 
   const bounds = map.getBounds();
 
@@ -153,6 +159,10 @@ async function loadBuildings(){
   document.getElementById("status").innerText =
     "Loading " + country + " buildings...";
 
+  /* Clear previous buildings so the user sees fresh results */
+  map.getSource("buildings")
+    .setData({type:"FeatureCollection",features:[]});
+
   try {
 
     const sql = `
@@ -167,26 +177,37 @@ async function loadBuildings(){
     LIMIT 3000
     `;
 
-    const result = await conn.query(sql);
-    const rows = result.toArray();
+    const stream = await conn.send(sql);
+    const features = [];
 
-    const features = rows.map(r => ({
-      type:"Feature",
-      geometry:JSON.parse(r.geom),
-      properties:{}
-    }));
+    for await(const batch of stream){
+      /* Abort if a newer query has started */
+      if(queryId !== currentQueryId) return;
 
-    const source = map.getSource("buildings");
-    if(!source) return;
-    source.setData({
-      type:"FeatureCollection",
-      features
-    });
+      const rows = batch.toArray();
+      for(const r of rows){
+        features.push({
+          type:"Feature",
+          geometry:JSON.parse(r.geom),
+          properties:{}
+        });
+      }
+
+      const source = map.getSource("buildings");
+      if(!source) return;
+      source.setData({type:"FeatureCollection",features});
+
+      document.getElementById("status").innerText =
+        features.length + " buildings (loading...)";
+    }
+
+    if(queryId !== currentQueryId) return;
 
     document.getElementById("status").innerText =
       features.length + " buildings";
 
   } catch(e) {
+    if(queryId !== currentQueryId) return;
     console.error("loadBuildings error:", e);
     document.getElementById("status").innerText = "Error: " + e.message;
   }
