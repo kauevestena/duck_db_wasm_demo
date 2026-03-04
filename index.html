@@ -22,6 +22,18 @@ html, body { margin:0; padding:0; height:100%; }
   font-size:12px;
   z-index:10;
 }
+
+#basemap-selector{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background:white;
+  padding:6px;
+  font-family:sans-serif;
+  font-size:12px;
+  z-index:10;
+  border-radius:4px;
+}
 </style>
 
 </head>
@@ -30,6 +42,14 @@ html, body { margin:0; padding:0; height:100%; }
 
 <div id="map"></div>
 <div id="status">Zoom ≥ 13 to load buildings</div>
+<div id="basemap-selector">
+  <label for="basemap">Background: </label>
+  <select id="basemap">
+    <option value="demotiles">MapLibre Demo</option>
+    <option value="osm">OSM Default</option>
+    <option value="positron">Carto Positron</option>
+  </select>
+</div>
 
 <script type="module">
 
@@ -56,12 +76,59 @@ const URL_TEMPLATE = countriesData.url_template;
 const DEFAULT_COUNTRY = countriesData.default_country;
 const COUNTRIES = countriesData.countries;
 
+/* Basemap styles */
+const BASEMAP_STYLES = {
+  demotiles: "https://demotiles.maplibre.org/style.json",
+  osm: {
+    version:8,
+    sources:{
+      "osm-raster":{
+        type:"raster",
+        tiles:["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+        tileSize:256,
+        attribution:"&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+      }
+    },
+    layers:[{id:"osm-tiles",type:"raster",source:"osm-raster"}]
+  },
+  positron: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+};
+
 /* Map */
 const map = new maplibregl.Map({
   container:"map",
-  style:"https://demotiles.maplibre.org/style.json",
+  style:BASEMAP_STYLES.demotiles,
   center:[0,20],
   zoom:3
+});
+
+/* Re-add buildings layer after style change */
+function addBuildingsLayer(){
+  if(map.getSource("buildings")) return;
+  map.addSource("buildings",{
+    type:"geojson",
+    data:{type:"FeatureCollection",features:[]}
+  });
+  map.addLayer({
+    id:"buildings",
+    type:"fill",
+    source:"buildings",
+    paint:{
+      "fill-color":"#ff5500",
+      "fill-opacity":0.5
+    }
+  });
+}
+
+/* Basemap switcher */
+document.getElementById("basemap").addEventListener("change", (e) => {
+  const style = BASEMAP_STYLES[e.target.value];
+  if(!style) return;
+  map.setStyle(style);
+});
+
+map.on("style.load", () => {
+  addBuildingsLayer();
 });
 
 /* DuckDB */
@@ -81,25 +148,7 @@ await conn.query("LOAD spatial;");
 
 document.getElementById("status").innerText = "DuckDB ready";
 
-/* Map layer */
-map.on("load", () => {
 
-  map.addSource("buildings", {
-    type:"geojson",
-    data:{type:"FeatureCollection",features:[]}
-  });
-
-  map.addLayer({
-    id:"buildings",
-    type:"fill",
-    source:"buildings",
-    paint:{
-      "fill-color":"#ff5500",
-      "fill-opacity":0.5
-    }
-  });
-
-});
 
 /* Detect country from lon/lat using bounding box lookup */
 function detectCountry(lon, lat){
