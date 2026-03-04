@@ -130,6 +130,8 @@ function detectCountry(lon, lat){
 /* Query */
 async function loadBuildings(){
 
+  if(!map.getSource("buildings")) return;
+
   if(map.getZoom() < MIN_ZOOM){
     document.getElementById("status").innerText =
       "Zoom ≥ " + MIN_ZOOM;
