@@ -158,10 +158,10 @@ async function loadBuildings(){
       ST_AsGeoJSON(geometry) AS geom
     FROM read_parquet('${dataset}')
     WHERE
-      bbox.xmin < ${xmax}
-      AND bbox.xmax > ${xmin}
-      AND bbox.ymin < ${ymax}
-      AND bbox.ymax > ${ymin}
+      ST_Intersects(
+        geometry,
+        ST_MakeEnvelope(${xmin}, ${ymin}, ${xmax}, ${ymax})
+      )
     LIMIT 3000
     `;
 

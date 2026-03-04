@@ -118,18 +118,19 @@ SELECT
   ST_AsGeoJSON(geometry)
 FROM read_parquet(country_dataset)
 WHERE
-  bbox.xmin < xmax
-  AND bbox.xmax > xmin
-  AND bbox.ymin < ymax
-  AND bbox.ymax > ymin
+  ST_Intersects(
+    geometry,
+    ST_MakeEnvelope(xmin, ymin, xmax, ymax)
+  )
 LIMIT 3000
 ```
 
 This query:
 
 1. Reads the **country GeoParquet partition**
-2. Filters features using the **map bounding box**
-3. Returns only a small subset of buildings.
+2. Uses **GeoParquet spatial filter pushdown** to download only relevant row groups
+3. Filters features using **ST_Intersects** against the map bounding box
+4. Returns only a small subset of buildings.
 
 ---
 
