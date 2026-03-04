@@ -37,16 +37,13 @@ import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0
 
 const MIN_ZOOM = 13;
 
-/* Global dataset partitioned by country */
-const COUNTRY_DATASETS = {
-  BRA:"https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso=BRA/*.parquet",
-  USA:"https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso=USA/*.parquet",
-  FRA:"https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso=FRA/*.parquet",
-  IND:"https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso=IND/*.parquet",
-  DEU:"https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso=DEU/*.parquet"
-};
+/* Load country list from external file */
+const countriesResponse = await fetch("countries.json");
+const countriesData = await countriesResponse.json();
 
-const DEFAULT_COUNTRY = "USA";
+const URL_TEMPLATE = countriesData.url_template;
+const DEFAULT_COUNTRY = countriesData.default_country;
+const COUNTRIES = countriesData.countries;
 
 /* Map */
 const map = new maplibregl.Map({
@@ -95,15 +92,29 @@ map.on("load", () => {
 
 });
 
-/* Simple country heuristic */
-function detectCountry(lon){
+/* Detect country from lon/lat using bounding box lookup */
+function detectCountry(lon, lat){
 
-  if(lon > -130 && lon < -60) return "USA";
-  if(lon > -75 && lon < -30) return "BRA";
-  if(lon > -10 && lon < 30) return "FRA";
-  if(lon > 70 && lon < 90) return "IND";
+  let best = null;
+  let bestDepth = -1;
 
-  return DEFAULT_COUNTRY;
+  for(const c of COUNTRIES){
+    const [minLon, minLat, maxLon, maxLat] = c.bbox;
+    if(lon >= minLon && lon <= maxLon && lat >= minLat && lat <= maxLat){
+      const w = maxLon - minLon;
+      const h = maxLat - minLat;
+      const depth = Math.min(
+        (lon - minLon) / w, (maxLon - lon) / w,
+        (lat - minLat) / h, (maxLat - lat) / h
+      );
+      if(depth > bestDepth){
+        best = c.code;
+        bestDepth = depth;
+      }
+    }
+  }
+
+  return best || DEFAULT_COUNTRY;
 }
 
 /* Query */
@@ -123,9 +134,9 @@ async function loadBuildings(){
   const ymax = bounds.getNorth();
 
   const center = map.getCenter();
-  const country = detectCountry(center.lng);
+  const country = detectCountry(center.lng, center.lat);
 
-  const dataset = COUNTRY_DATASETS[country] || COUNTRY_DATASETS[DEFAULT_COUNTRY];
+  const dataset = URL_TEMPLATE.replace("{code}", country);
 
   document.getElementById("status").innerText =
     "Loading " + country + " buildings...";

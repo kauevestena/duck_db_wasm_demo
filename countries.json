@@ -2,253 +2,2485 @@
   "url_template": "https://data.source.coop/vida/google-microsoft-open-buildings/geoparquet/by_country/country_iso={code}/*.parquet",
   "default_country": "USA",
   "countries": [
-    {"code": "AFG", "name": "Afghanistan", "bbox": [60.52, 29.38, 74.89, 38.49]},
-    {"code": "ALB", "name": "Albania", "bbox": [19.30, 39.62, 21.02, 42.69]},
-    {"code": "DZA", "name": "Algeria", "bbox": [-8.67, 18.96, 11.98, 37.09]},
-    {"code": "AND", "name": "Andorra", "bbox": [1.41, 42.43, 1.79, 42.66]},
-    {"code": "AGO", "name": "Angola", "bbox": [11.64, -18.04, 24.08, -4.38]},
-    {"code": "ATG", "name": "Antigua and Barbuda", "bbox": [-62.35, 16.93, -61.66, 17.73]},
-    {"code": "ARG", "name": "Argentina", "bbox": [-73.42, -55.25, -53.63, -21.83]},
-    {"code": "ARM", "name": "Armenia", "bbox": [43.58, 38.74, 46.51, 41.30]},
-    {"code": "AUS", "name": "Australia", "bbox": [112.92, -43.74, 153.64, -10.06]},
-    {"code": "AUT", "name": "Austria", "bbox": [9.48, 46.43, 17.17, 49.02]},
-    {"code": "AZE", "name": "Azerbaijan", "bbox": [44.77, 38.39, 50.39, 41.91]},
-    {"code": "BHS", "name": "Bahamas", "bbox": [-80.47, 20.91, -72.71, 27.26]},
-    {"code": "BHR", "name": "Bahrain", "bbox": [50.45, 25.80, 50.65, 26.29]},
-    {"code": "BGD", "name": "Bangladesh", "bbox": [88.01, 20.74, 92.67, 26.63]},
-    {"code": "BRB", "name": "Barbados", "bbox": [-59.65, 13.04, -59.43, 13.34]},
-    {"code": "BLR", "name": "Belarus", "bbox": [23.18, 51.26, 32.69, 56.17]},
-    {"code": "BEL", "name": "Belgium", "bbox": [2.51, 49.50, 6.41, 51.51]},
-    {"code": "BLZ", "name": "Belize", "bbox": [-89.22, 15.89, -87.49, 18.50]},
-    {"code": "BEN", "name": "Benin", "bbox": [0.77, 6.14, 3.80, 12.42]},
-    {"code": "BTN", "name": "Bhutan", "bbox": [88.81, 26.71, 92.10, 28.32]},
-    {"code": "BOL", "name": "Bolivia", "bbox": [-69.59, -22.87, -57.50, -9.68]},
-    {"code": "BIH", "name": "Bosnia and Herzegovina", "bbox": [15.75, 42.56, 19.60, 45.28]},
-    {"code": "BWA", "name": "Botswana", "bbox": [19.90, -26.91, 29.37, -17.78]},
-    {"code": "BRA", "name": "Brazil", "bbox": [-73.99, -33.75, -34.79, 5.27]},
-    {"code": "BRN", "name": "Brunei", "bbox": [114.07, 4.01, 115.36, 5.05]},
-    {"code": "BGR", "name": "Bulgaria", "bbox": [22.36, 41.24, 28.61, 44.23]},
-    {"code": "BFA", "name": "Burkina Faso", "bbox": [-5.52, 9.39, 2.41, 15.08]},
-    {"code": "BDI", "name": "Burundi", "bbox": [29.00, -4.47, 30.85, -2.31]},
-    {"code": "CPV", "name": "Cabo Verde", "bbox": [-25.36, 14.80, -22.66, 17.20]},
-    {"code": "KHM", "name": "Cambodia", "bbox": [102.35, 10.49, 107.61, 14.69]},
-    {"code": "CMR", "name": "Cameroon", "bbox": [8.49, 1.65, 16.19, 13.08]},
-    {"code": "CAN", "name": "Canada", "bbox": [-141.00, 41.68, -52.62, 83.11]},
-    {"code": "CAF", "name": "Central African Republic", "bbox": [14.42, 2.22, 27.46, 11.00]},
-    {"code": "TCD", "name": "Chad", "bbox": [13.47, 7.44, 24.00, 23.45]},
-    {"code": "CHL", "name": "Chile", "bbox": [-75.64, -55.61, -66.96, -17.58]},
-    {"code": "CHN", "name": "China", "bbox": [73.50, 18.15, 134.77, 53.56]},
-    {"code": "COL", "name": "Colombia", "bbox": [-81.73, -4.23, -66.87, 13.39]},
-    {"code": "COM", "name": "Comoros", "bbox": [43.23, -12.38, 44.53, -11.36]},
-    {"code": "COG", "name": "Congo", "bbox": [11.09, -5.04, 18.65, 3.70]},
-    {"code": "COD", "name": "Congo (Democratic Republic)", "bbox": [12.18, -13.46, 31.31, 5.39]},
-    {"code": "CRI", "name": "Costa Rica", "bbox": [-85.95, 8.03, -82.55, 11.22]},
-    {"code": "CIV", "name": "Côte d'Ivoire", "bbox": [-8.60, 4.36, -2.49, 10.74]},
-    {"code": "HRV", "name": "Croatia", "bbox": [13.66, 42.39, 19.43, 46.56]},
-    {"code": "CUB", "name": "Cuba", "bbox": [-84.97, 19.83, -74.18, 23.19]},
-    {"code": "CYP", "name": "Cyprus", "bbox": [32.27, 34.57, 34.60, 35.70]},
-    {"code": "CZE", "name": "Czechia", "bbox": [12.09, 48.55, 18.86, 51.06]},
-    {"code": "DNK", "name": "Denmark", "bbox": [8.09, 54.56, 15.20, 57.75]},
-    {"code": "DJI", "name": "Djibouti", "bbox": [41.77, 10.93, 43.42, 12.71]},
-    {"code": "DMA", "name": "Dominica", "bbox": [-61.48, 15.20, -61.24, 15.65]},
-    {"code": "DOM", "name": "Dominican Republic", "bbox": [-72.00, 17.47, -68.32, 19.93]},
-    {"code": "ECU", "name": "Ecuador", "bbox": [-81.08, -5.00, -75.19, 1.68]},
-    {"code": "EGY", "name": "Egypt", "bbox": [24.70, 22.00, 36.87, 31.67]},
-    {"code": "SLV", "name": "El Salvador", "bbox": [-90.13, 13.15, -87.69, 14.45]},
-    {"code": "GNQ", "name": "Equatorial Guinea", "bbox": [5.61, -1.47, 11.34, 3.79]},
-    {"code": "ERI", "name": "Eritrea", "bbox": [36.32, 12.36, 43.14, 18.00]},
-    {"code": "EST", "name": "Estonia", "bbox": [21.76, 57.52, 28.21, 59.69]},
-    {"code": "SWZ", "name": "Eswatini", "bbox": [30.79, -27.32, 32.13, -25.72]},
-    {"code": "ETH", "name": "Ethiopia", "bbox": [32.95, 3.40, 47.99, 14.89]},
-    {"code": "FJI", "name": "Fiji", "bbox": [176.00, -20.68, -179.79, -12.48]},
-    {"code": "FIN", "name": "Finland", "bbox": [20.65, 59.81, 31.58, 70.09]},
-    {"code": "FRA", "name": "France", "bbox": [-5.14, 41.36, 9.56, 51.09]},
-    {"code": "GAB", "name": "Gabon", "bbox": [8.80, -3.98, 14.50, 2.33]},
-    {"code": "GMB", "name": "Gambia", "bbox": [-16.82, 13.06, -13.79, 13.83]},
-    {"code": "GEO", "name": "Georgia", "bbox": [40.01, 41.05, 46.74, 43.59]},
-    {"code": "DEU", "name": "Germany", "bbox": [5.87, 47.27, 15.04, 55.06]},
-    {"code": "GHA", "name": "Ghana", "bbox": [-3.26, 4.74, 1.19, 11.17]},
-    {"code": "GRC", "name": "Greece", "bbox": [19.37, 34.80, 29.65, 41.75]},
-    {"code": "GRD", "name": "Grenada", "bbox": [-61.80, 11.98, -61.38, 12.53]},
-    {"code": "GTM", "name": "Guatemala", "bbox": [-92.23, 13.74, -88.22, 17.82]},
-    {"code": "GIN", "name": "Guinea", "bbox": [-15.13, 7.19, -7.83, 12.68]},
-    {"code": "GNB", "name": "Guinea-Bissau", "bbox": [-16.71, 10.93, -13.64, 12.68]},
-    {"code": "GUY", "name": "Guyana", "bbox": [-61.41, 1.17, -56.47, 8.56]},
-    {"code": "HTI", "name": "Haiti", "bbox": [-74.48, 18.03, -71.62, 20.09]},
-    {"code": "HND", "name": "Honduras", "bbox": [-89.35, 12.98, -83.13, 16.52]},
-    {"code": "HUN", "name": "Hungary", "bbox": [16.11, 45.74, 22.90, 48.59]},
-    {"code": "ISL", "name": "Iceland", "bbox": [-24.33, 63.39, -13.50, 66.53]},
-    {"code": "IND", "name": "India", "bbox": [68.18, 6.75, 97.40, 35.50]},
-    {"code": "IDN", "name": "Indonesia", "bbox": [95.29, -11.01, 141.02, 5.91]},
-    {"code": "IRN", "name": "Iran", "bbox": [44.05, 25.06, 63.32, 39.78]},
-    {"code": "IRQ", "name": "Iraq", "bbox": [38.79, 29.06, 48.57, 37.38]},
-    {"code": "IRL", "name": "Ireland", "bbox": [-10.48, 51.42, -6.01, 55.38]},
-    {"code": "ISR", "name": "Israel", "bbox": [34.27, 29.50, 35.84, 33.34]},
-    {"code": "ITA", "name": "Italy", "bbox": [6.63, 36.62, 18.52, 47.09]},
-    {"code": "JAM", "name": "Jamaica", "bbox": [-78.37, 17.70, -76.18, 18.52]},
-    {"code": "JPN", "name": "Japan", "bbox": [122.93, 24.05, 153.99, 45.55]},
-    {"code": "JOR", "name": "Jordan", "bbox": [34.96, 29.19, 39.30, 33.38]},
-    {"code": "KAZ", "name": "Kazakhstan", "bbox": [46.47, 40.66, 87.36, 55.45]},
-    {"code": "KEN", "name": "Kenya", "bbox": [33.89, -4.68, 41.86, 5.51]},
-    {"code": "KIR", "name": "Kiribati", "bbox": [169.56, -11.44, -150.22, 4.72]},
-    {"code": "PRK", "name": "North Korea", "bbox": [124.27, 37.67, 130.78, 43.01]},
-    {"code": "KOR", "name": "South Korea", "bbox": [124.60, 33.11, 131.87, 38.61]},
-    {"code": "KWT", "name": "Kuwait", "bbox": [46.55, 28.52, 48.42, 30.10]},
-    {"code": "KGZ", "name": "Kyrgyzstan", "bbox": [69.28, 39.17, 80.23, 43.27]},
-    {"code": "LAO", "name": "Laos", "bbox": [100.09, 13.91, 107.64, 22.50]},
-    {"code": "LVA", "name": "Latvia", "bbox": [20.97, 55.67, 28.24, 58.08]},
-    {"code": "LBN", "name": "Lebanon", "bbox": [35.10, 33.05, 36.62, 34.69]},
-    {"code": "LSO", "name": "Lesotho", "bbox": [27.01, -30.68, 29.46, -28.57]},
-    {"code": "LBR", "name": "Liberia", "bbox": [-11.49, 4.35, -7.37, 8.55]},
-    {"code": "LBY", "name": "Libya", "bbox": [9.39, 19.50, 25.15, 33.17]},
-    {"code": "LIE", "name": "Liechtenstein", "bbox": [9.47, 47.05, 9.64, 47.27]},
-    {"code": "LTU", "name": "Lithuania", "bbox": [20.93, 53.90, 26.84, 56.45]},
-    {"code": "LUX", "name": "Luxembourg", "bbox": [5.73, 49.44, 6.53, 50.18]},
-    {"code": "MDG", "name": "Madagascar", "bbox": [43.22, -25.61, 50.48, -11.95]},
-    {"code": "MWI", "name": "Malawi", "bbox": [32.67, -17.13, 35.92, -9.37]},
-    {"code": "MYS", "name": "Malaysia", "bbox": [99.64, 0.85, 119.27, 7.36]},
-    {"code": "MDV", "name": "Maldives", "bbox": [72.68, -0.69, 73.75, 7.10]},
-    {"code": "MLI", "name": "Mali", "bbox": [-12.24, 10.16, 4.27, 25.00]},
-    {"code": "MLT", "name": "Malta", "bbox": [14.18, 35.81, 14.57, 36.08]},
-    {"code": "MHL", "name": "Marshall Islands", "bbox": [160.80, 4.57, 172.17, 14.61]},
-    {"code": "MRT", "name": "Mauritania", "bbox": [-17.07, 14.72, -4.83, 27.30]},
-    {"code": "MUS", "name": "Mauritius", "bbox": [57.30, -20.53, 57.81, -19.97]},
-    {"code": "MEX", "name": "Mexico", "bbox": [-117.13, 14.53, -86.81, 32.72]},
-    {"code": "FSM", "name": "Micronesia", "bbox": [137.33, 1.03, 163.04, 10.09]},
-    {"code": "MDA", "name": "Moldova", "bbox": [26.62, 45.49, 30.16, 48.49]},
-    {"code": "MCO", "name": "Monaco", "bbox": [7.41, 43.72, 7.44, 43.75]},
-    {"code": "MNG", "name": "Mongolia", "bbox": [87.75, 41.58, 119.77, 52.15]},
-    {"code": "MNE", "name": "Montenegro", "bbox": [18.46, 41.85, 20.35, 43.56]},
-    {"code": "MAR", "name": "Morocco", "bbox": [-13.17, 27.67, -0.99, 35.93]},
-    {"code": "MOZ", "name": "Mozambique", "bbox": [30.22, -26.87, 40.84, -10.47]},
-    {"code": "MMR", "name": "Myanmar", "bbox": [92.19, 9.60, 101.17, 28.54]},
-    {"code": "NAM", "name": "Namibia", "bbox": [11.73, -29.05, 25.26, -16.96]},
-    {"code": "NRU", "name": "Nauru", "bbox": [166.90, -0.56, 166.96, -0.50]},
-    {"code": "NPL", "name": "Nepal", "bbox": [80.06, 26.35, 88.17, 30.45]},
-    {"code": "NLD", "name": "Netherlands", "bbox": [3.36, 50.75, 7.21, 53.47]},
-    {"code": "NZL", "name": "New Zealand", "bbox": [166.43, -47.29, 178.55, -34.39]},
-    {"code": "NIC", "name": "Nicaragua", "bbox": [-87.69, 10.73, -82.73, 15.02]},
-    {"code": "NER", "name": "Niger", "bbox": [0.17, 11.69, 15.90, 23.52]},
-    {"code": "NGA", "name": "Nigeria", "bbox": [2.69, 4.24, 14.68, 13.87]},
-    {"code": "MKD", "name": "North Macedonia", "bbox": [20.46, 40.85, 23.04, 42.36]},
-    {"code": "NOR", "name": "Norway", "bbox": [4.65, 57.96, 31.08, 71.19]},
-    {"code": "OMN", "name": "Oman", "bbox": [51.88, 16.65, 59.81, 26.40]},
-    {"code": "PAK", "name": "Pakistan", "bbox": [60.87, 23.69, 77.84, 37.13]},
-    {"code": "PLW", "name": "Palau", "bbox": [131.12, 2.75, 134.73, 8.10]},
-    {"code": "PSE", "name": "Palestine", "bbox": [34.22, 31.22, 35.57, 32.55]},
-    {"code": "PAN", "name": "Panama", "bbox": [-83.05, 7.20, -77.17, 9.61]},
-    {"code": "PNG", "name": "Papua New Guinea", "bbox": [140.84, -11.66, 159.49, -1.35]},
-    {"code": "PRY", "name": "Paraguay", "bbox": [-62.64, -27.59, -54.29, -19.29]},
-    {"code": "PER", "name": "Peru", "bbox": [-81.33, -18.35, -68.65, -0.04]},
-    {"code": "PHL", "name": "Philippines", "bbox": [116.95, 4.59, 126.60, 21.12]},
-    {"code": "POL", "name": "Poland", "bbox": [14.07, 49.00, 24.15, 54.84]},
-    {"code": "PRT", "name": "Portugal", "bbox": [-9.53, 36.84, -6.19, 42.15]},
-    {"code": "QAT", "name": "Qatar", "bbox": [50.76, 24.47, 51.64, 26.15]},
-    {"code": "ROU", "name": "Romania", "bbox": [20.22, 43.62, 29.69, 48.27]},
-    {"code": "RUS", "name": "Russia", "bbox": [19.64, 41.19, 180.00, 81.86]},
-    {"code": "RWA", "name": "Rwanda", "bbox": [28.86, -2.84, 30.90, -1.05]},
-    {"code": "KNA", "name": "Saint Kitts and Nevis", "bbox": [-62.87, 17.09, -62.54, 17.42]},
-    {"code": "LCA", "name": "Saint Lucia", "bbox": [-61.08, 13.71, -60.87, 14.11]},
-    {"code": "VCT", "name": "Saint Vincent and the Grenadines", "bbox": [-61.46, 12.58, -61.11, 13.38]},
-    {"code": "WSM", "name": "Samoa", "bbox": [-172.80, -14.08, -171.41, -13.43]},
-    {"code": "SMR", "name": "San Marino", "bbox": [12.40, 43.89, 12.52, 43.99]},
-    {"code": "STP", "name": "São Tomé and Príncipe", "bbox": [6.47, 0.02, 7.47, 1.70]},
-    {"code": "SAU", "name": "Saudi Arabia", "bbox": [34.63, 16.38, 55.67, 32.16]},
-    {"code": "SEN", "name": "Senegal", "bbox": [-17.54, 12.31, -11.36, 16.69]},
-    {"code": "SRB", "name": "Serbia", "bbox": [18.82, 42.23, 23.01, 46.19]},
-    {"code": "SYC", "name": "Seychelles", "bbox": [46.20, -10.23, 56.29, -3.71]},
-    {"code": "SLE", "name": "Sierra Leone", "bbox": [-13.25, 6.93, -10.27, 10.00]},
-    {"code": "SGP", "name": "Singapore", "bbox": [103.64, 1.17, 104.01, 1.47]},
-    {"code": "SVK", "name": "Slovakia", "bbox": [16.83, 47.73, 22.57, 49.60]},
-    {"code": "SVN", "name": "Slovenia", "bbox": [13.38, 45.42, 16.60, 46.88]},
-    {"code": "SLB", "name": "Solomon Islands", "bbox": [155.51, -11.85, 170.19, -5.29]},
-    {"code": "SOM", "name": "Somalia", "bbox": [40.98, -1.68, 51.42, 12.02]},
-    {"code": "ZAF", "name": "South Africa", "bbox": [16.34, -34.84, 32.83, -22.13]},
-    {"code": "SSD", "name": "South Sudan", "bbox": [23.89, 3.49, 35.95, 12.24]},
-    {"code": "ESP", "name": "Spain", "bbox": [-9.39, 35.95, 4.31, 43.75]},
-    {"code": "LKA", "name": "Sri Lanka", "bbox": [79.65, 5.92, 81.88, 9.84]},
-    {"code": "SDN", "name": "Sudan", "bbox": [21.81, 8.68, 38.58, 22.00]},
-    {"code": "SUR", "name": "Suriname", "bbox": [-58.07, 1.83, -53.98, 6.01]},
-    {"code": "SWE", "name": "Sweden", "bbox": [11.11, 55.34, 24.16, 69.06]},
-    {"code": "CHE", "name": "Switzerland", "bbox": [5.96, 45.82, 10.49, 47.81]},
-    {"code": "SYR", "name": "Syria", "bbox": [35.73, 32.31, 42.35, 37.32]},
-    {"code": "TWN", "name": "Taiwan", "bbox": [119.53, 21.90, 122.00, 25.30]},
-    {"code": "TJK", "name": "Tajikistan", "bbox": [67.39, 36.67, 75.14, 41.04]},
-    {"code": "TZA", "name": "Tanzania", "bbox": [29.33, -11.75, 40.44, -0.99]},
-    {"code": "THA", "name": "Thailand", "bbox": [97.35, 5.61, 105.64, 20.46]},
-    {"code": "TLS", "name": "Timor-Leste", "bbox": [124.04, -9.50, 127.34, -8.13]},
-    {"code": "TGO", "name": "Togo", "bbox": [-0.15, 6.10, 1.81, 11.14]},
-    {"code": "TON", "name": "Tonga", "bbox": [-176.22, -22.35, -173.72, -15.56]},
-    {"code": "TTO", "name": "Trinidad and Tobago", "bbox": [-61.93, 10.04, -60.52, 11.36]},
-    {"code": "TUN", "name": "Tunisia", "bbox": [7.52, 30.23, 11.60, 37.54]},
-    {"code": "TUR", "name": "Turkey", "bbox": [25.66, 35.82, 44.79, 42.11]},
-    {"code": "TKM", "name": "Turkmenistan", "bbox": [52.44, 35.14, 66.68, 42.80]},
-    {"code": "TUV", "name": "Tuvalu", "bbox": [176.06, -10.79, 179.87, -5.64]},
-    {"code": "UGA", "name": "Uganda", "bbox": [29.57, -1.48, 35.04, 4.23]},
-    {"code": "UKR", "name": "Ukraine", "bbox": [22.09, 44.36, 40.08, 52.38]},
-    {"code": "ARE", "name": "United Arab Emirates", "bbox": [51.58, 22.63, 56.38, 26.08]},
-    {"code": "GBR", "name": "United Kingdom", "bbox": [-8.65, 49.86, 1.77, 60.86]},
-    {"code": "USA", "name": "United States", "bbox": [-171.80, 18.90, -66.90, 71.40]},
-    {"code": "URY", "name": "Uruguay", "bbox": [-58.44, -34.95, -53.07, -30.09]},
-    {"code": "UZB", "name": "Uzbekistan", "bbox": [55.93, 37.14, 73.06, 45.59]},
-    {"code": "VUT", "name": "Vanuatu", "bbox": [166.54, -20.25, 170.24, -13.07]},
-    {"code": "VAT", "name": "Vatican City", "bbox": [12.45, 41.90, 12.46, 41.91]},
-    {"code": "VEN", "name": "Venezuela", "bbox": [-73.30, 0.72, -59.76, 12.20]},
-    {"code": "VNM", "name": "Vietnam", "bbox": [102.15, 8.56, 109.46, 23.39]},
-    {"code": "YEM", "name": "Yemen", "bbox": [42.60, 12.59, 54.53, 19.00]},
-    {"code": "ZMB", "name": "Zambia", "bbox": [21.99, -18.08, 33.71, -8.22]},
-    {"code": "ZWE", "name": "Zimbabwe", "bbox": [25.24, -22.42, 33.06, -15.61]},
-    {"code": "XKX", "name": "Kosovo", "bbox": [20.01, 41.86, 21.79, 43.27]},
-    {"code": "ABW", "name": "Aruba", "bbox": [-70.06, 12.41, -69.87, 12.63]},
-    {"code": "AIA", "name": "Anguilla", "bbox": [-63.17, 18.17, -62.97, 18.28]},
-    {"code": "ASM", "name": "American Samoa", "bbox": [-171.09, -14.38, -168.14, -11.05]},
-    {"code": "BMU", "name": "Bermuda", "bbox": [-64.89, 32.25, -64.65, 32.39]},
-    {"code": "VGB", "name": "British Virgin Islands", "bbox": [-64.71, 18.33, -64.27, 18.76]},
-    {"code": "CYM", "name": "Cayman Islands", "bbox": [-81.43, 19.26, -79.73, 19.76]},
-    {"code": "COK", "name": "Cook Islands", "bbox": [-165.83, -21.94, -157.31, -8.95]},
-    {"code": "CUW", "name": "Curaçao", "bbox": [-69.16, 12.04, -68.74, 12.39]},
-    {"code": "FLK", "name": "Falkland Islands", "bbox": [-61.40, -52.58, -57.73, -51.02]},
-    {"code": "FRO", "name": "Faroe Islands", "bbox": [-7.40, 61.39, -6.26, 62.40]},
-    {"code": "GUF", "name": "French Guiana", "bbox": [-54.60, 2.11, -51.61, 5.76]},
-    {"code": "PYF", "name": "French Polynesia", "bbox": [-154.72, -27.64, -134.93, -7.89]},
-    {"code": "GIB", "name": "Gibraltar", "bbox": [-5.36, 36.11, -5.34, 36.16]},
-    {"code": "GRL", "name": "Greenland", "bbox": [-73.05, 59.79, -11.31, 83.63]},
-    {"code": "GLP", "name": "Guadeloupe", "bbox": [-61.81, 15.83, -61.00, 16.51]},
-    {"code": "GUM", "name": "Guam", "bbox": [144.62, 13.24, 144.96, 13.65]},
-    {"code": "HKG", "name": "Hong Kong", "bbox": [113.84, 22.15, 114.41, 22.56]},
-    {"code": "IMN", "name": "Isle of Man", "bbox": [-4.79, 54.06, -4.31, 54.42]},
-    {"code": "JEY", "name": "Jersey", "bbox": [-2.26, 49.17, -2.00, 49.27]},
-    {"code": "GGY", "name": "Guernsey", "bbox": [-2.67, 49.43, -2.50, 49.73]},
-    {"code": "MAC", "name": "Macau", "bbox": [113.53, 22.11, 113.60, 22.22]},
-    {"code": "MTQ", "name": "Martinique", "bbox": [-61.23, 14.39, -60.81, 14.88]},
-    {"code": "MYT", "name": "Mayotte", "bbox": [45.04, -12.99, 45.30, -12.64]},
-    {"code": "MSR", "name": "Montserrat", "bbox": [-62.24, 16.67, -62.14, 16.82]},
-    {"code": "NCL", "name": "New Caledonia", "bbox": [163.56, -22.70, 168.13, -19.50]},
-    {"code": "NIU", "name": "Niue", "bbox": [-169.95, -19.15, -169.77, -18.96]},
-    {"code": "NFK", "name": "Norfolk Island", "bbox": [167.91, -29.08, 167.99, -28.99]},
-    {"code": "MNP", "name": "Northern Mariana Islands", "bbox": [144.90, 14.11, 146.07, 20.56]},
-    {"code": "REU", "name": "Réunion", "bbox": [55.22, -21.39, 55.84, -20.87]},
-    {"code": "BLM", "name": "Saint Barthélemy", "bbox": [-62.88, 17.88, -62.79, 17.93]},
-    {"code": "SHN", "name": "Saint Helena", "bbox": [-5.79, -16.02, -5.64, -15.90]},
-    {"code": "MAF", "name": "Saint Martin", "bbox": [-63.15, 18.05, -63.01, 18.13]},
-    {"code": "SPM", "name": "Saint Pierre and Miquelon", "bbox": [-56.41, 46.75, -56.12, 47.14]},
-    {"code": "SXM", "name": "Sint Maarten", "bbox": [-63.14, 18.01, -63.01, 18.07]},
-    {"code": "TCA", "name": "Turks and Caicos Islands", "bbox": [-72.48, 21.17, -71.12, 21.96]},
-    {"code": "VIR", "name": "U.S. Virgin Islands", "bbox": [-65.04, 17.68, -64.56, 18.41]},
-    {"code": "WLF", "name": "Wallis and Futuna", "bbox": [-178.19, -14.32, -176.12, -13.21]},
-    {"code": "ESH", "name": "Western Sahara", "bbox": [-17.10, 20.77, -8.67, 27.67]},
-    {"code": "PCN", "name": "Pitcairn Islands", "bbox": [-130.11, -25.08, -124.77, -23.92]},
-    {"code": "TKL", "name": "Tokelau", "bbox": [-172.50, -9.44, -171.21, -8.55]},
-    {"code": "PRI", "name": "Puerto Rico", "bbox": [-67.27, 17.88, -65.59, 18.52]},
-    {"code": "SGS", "name": "South Georgia and the South Sandwich Islands", "bbox": [-38.02, -59.47, -26.24, -53.97]},
-    {"code": "ATA", "name": "Antarctica", "bbox": [-180.00, -90.00, 180.00, -60.00]},
-    {"code": "BVT", "name": "Bouvet Island", "bbox": [3.29, -54.46, 3.49, -54.38]},
-    {"code": "IOT", "name": "British Indian Ocean Territory", "bbox": [71.26, -7.44, 72.49, -5.23]},
-    {"code": "CCK", "name": "Cocos (Keeling) Islands", "bbox": [96.82, -12.21, 96.93, -11.82]},
-    {"code": "CXR", "name": "Christmas Island", "bbox": [105.53, -10.57, 105.71, -10.41]},
-    {"code": "HMD", "name": "Heard Island and McDonald Islands", "bbox": [73.24, -53.19, 73.77, -52.96]},
-    {"code": "ATF", "name": "French Southern Territories", "bbox": [39.72, -49.73, 77.60, -11.55]},
-    {"code": "SJM", "name": "Svalbard and Jan Mayen", "bbox": [-9.12, 70.80, 33.64, 80.83]},
-    {"code": "UMI", "name": "United States Minor Outlying Islands", "bbox": [-177.39, -0.39, -74.00, 28.40]}
+    {
+      "code": "AFG",
+      "name": "Afghanistan",
+      "bbox": [
+        60.52,
+        29.38,
+        74.89,
+        38.49
+      ]
+    },
+    {
+      "code": "ALB",
+      "name": "Albania",
+      "bbox": [
+        19.3,
+        39.62,
+        21.02,
+        42.69
+      ]
+    },
+    {
+      "code": "DZA",
+      "name": "Algeria",
+      "bbox": [
+        -8.67,
+        18.96,
+        11.98,
+        37.09
+      ]
+    },
+    {
+      "code": "AND",
+      "name": "Andorra",
+      "bbox": [
+        1.41,
+        42.43,
+        1.79,
+        42.66
+      ]
+    },
+    {
+      "code": "AGO",
+      "name": "Angola",
+      "bbox": [
+        11.64,
+        -18.04,
+        24.08,
+        -4.38
+      ]
+    },
+    {
+      "code": "ATG",
+      "name": "Antigua and Barbuda",
+      "bbox": [
+        -62.35,
+        16.93,
+        -61.66,
+        17.73
+      ]
+    },
+    {
+      "code": "ARG",
+      "name": "Argentina",
+      "bbox": [
+        -73.42,
+        -55.25,
+        -53.63,
+        -21.83
+      ]
+    },
+    {
+      "code": "ARM",
+      "name": "Armenia",
+      "bbox": [
+        43.58,
+        38.74,
+        46.51,
+        41.3
+      ]
+    },
+    {
+      "code": "AUS",
+      "name": "Australia",
+      "bbox": [
+        112.92,
+        -43.74,
+        153.64,
+        -10.06
+      ]
+    },
+    {
+      "code": "AUT",
+      "name": "Austria",
+      "bbox": [
+        9.48,
+        46.43,
+        17.17,
+        49.02
+      ]
+    },
+    {
+      "code": "AZE",
+      "name": "Azerbaijan",
+      "bbox": [
+        44.77,
+        38.39,
+        50.39,
+        41.91
+      ]
+    },
+    {
+      "code": "BHS",
+      "name": "Bahamas",
+      "bbox": [
+        -80.47,
+        20.91,
+        -72.71,
+        27.26
+      ]
+    },
+    {
+      "code": "BHR",
+      "name": "Bahrain",
+      "bbox": [
+        50.45,
+        25.8,
+        50.65,
+        26.29
+      ]
+    },
+    {
+      "code": "BGD",
+      "name": "Bangladesh",
+      "bbox": [
+        88.01,
+        20.74,
+        92.67,
+        26.63
+      ]
+    },
+    {
+      "code": "BRB",
+      "name": "Barbados",
+      "bbox": [
+        -59.65,
+        13.04,
+        -59.43,
+        13.34
+      ]
+    },
+    {
+      "code": "BLR",
+      "name": "Belarus",
+      "bbox": [
+        23.18,
+        51.26,
+        32.69,
+        56.17
+      ]
+    },
+    {
+      "code": "BEL",
+      "name": "Belgium",
+      "bbox": [
+        2.51,
+        49.5,
+        6.41,
+        51.51
+      ]
+    },
+    {
+      "code": "BLZ",
+      "name": "Belize",
+      "bbox": [
+        -89.22,
+        15.89,
+        -87.49,
+        18.5
+      ]
+    },
+    {
+      "code": "BEN",
+      "name": "Benin",
+      "bbox": [
+        0.77,
+        6.14,
+        3.8,
+        12.42
+      ]
+    },
+    {
+      "code": "BTN",
+      "name": "Bhutan",
+      "bbox": [
+        88.81,
+        26.71,
+        92.1,
+        28.32
+      ]
+    },
+    {
+      "code": "BOL",
+      "name": "Bolivia",
+      "bbox": [
+        -69.59,
+        -22.87,
+        -57.5,
+        -9.68
+      ]
+    },
+    {
+      "code": "BIH",
+      "name": "Bosnia and Herzegovina",
+      "bbox": [
+        15.75,
+        42.56,
+        19.6,
+        45.28
+      ]
+    },
+    {
+      "code": "BWA",
+      "name": "Botswana",
+      "bbox": [
+        19.9,
+        -26.91,
+        29.37,
+        -17.78
+      ]
+    },
+    {
+      "code": "BRA",
+      "name": "Brazil",
+      "bbox": [
+        -73.99,
+        -33.75,
+        -34.79,
+        5.27
+      ]
+    },
+    {
+      "code": "BRN",
+      "name": "Brunei",
+      "bbox": [
+        114.07,
+        4.01,
+        115.36,
+        5.05
+      ]
+    },
+    {
+      "code": "BGR",
+      "name": "Bulgaria",
+      "bbox": [
+        22.36,
+        41.24,
+        28.61,
+        44.23
+      ]
+    },
+    {
+      "code": "BFA",
+      "name": "Burkina Faso",
+      "bbox": [
+        -5.52,
+        9.39,
+        2.41,
+        15.08
+      ]
+    },
+    {
+      "code": "BDI",
+      "name": "Burundi",
+      "bbox": [
+        29.0,
+        -4.47,
+        30.85,
+        -2.31
+      ]
+    },
+    {
+      "code": "CPV",
+      "name": "Cabo Verde",
+      "bbox": [
+        -25.36,
+        14.8,
+        -22.66,
+        17.2
+      ]
+    },
+    {
+      "code": "KHM",
+      "name": "Cambodia",
+      "bbox": [
+        102.35,
+        10.49,
+        107.61,
+        14.69
+      ]
+    },
+    {
+      "code": "CMR",
+      "name": "Cameroon",
+      "bbox": [
+        8.49,
+        1.65,
+        16.19,
+        13.08
+      ]
+    },
+    {
+      "code": "CAN",
+      "name": "Canada",
+      "bbox": [
+        -141.0,
+        41.68,
+        -52.62,
+        83.11
+      ]
+    },
+    {
+      "code": "CAF",
+      "name": "Central African Republic",
+      "bbox": [
+        14.42,
+        2.22,
+        27.46,
+        11.0
+      ]
+    },
+    {
+      "code": "TCD",
+      "name": "Chad",
+      "bbox": [
+        13.47,
+        7.44,
+        24.0,
+        23.45
+      ]
+    },
+    {
+      "code": "CHL",
+      "name": "Chile",
+      "bbox": [
+        -75.64,
+        -55.61,
+        -66.96,
+        -17.58
+      ]
+    },
+    {
+      "code": "CHN",
+      "name": "China",
+      "bbox": [
+        73.5,
+        18.15,
+        134.77,
+        53.56
+      ]
+    },
+    {
+      "code": "COL",
+      "name": "Colombia",
+      "bbox": [
+        -81.73,
+        -4.23,
+        -66.87,
+        13.39
+      ]
+    },
+    {
+      "code": "COM",
+      "name": "Comoros",
+      "bbox": [
+        43.23,
+        -12.38,
+        44.53,
+        -11.36
+      ]
+    },
+    {
+      "code": "COG",
+      "name": "Congo",
+      "bbox": [
+        11.09,
+        -5.04,
+        18.65,
+        3.7
+      ]
+    },
+    {
+      "code": "COD",
+      "name": "Congo (Democratic Republic)",
+      "bbox": [
+        12.18,
+        -13.46,
+        31.31,
+        5.39
+      ]
+    },
+    {
+      "code": "CRI",
+      "name": "Costa Rica",
+      "bbox": [
+        -85.95,
+        8.03,
+        -82.55,
+        11.22
+      ]
+    },
+    {
+      "code": "CIV",
+      "name": "C\u00f4te d'Ivoire",
+      "bbox": [
+        -8.6,
+        4.36,
+        -2.49,
+        10.74
+      ]
+    },
+    {
+      "code": "HRV",
+      "name": "Croatia",
+      "bbox": [
+        13.66,
+        42.39,
+        19.43,
+        46.56
+      ]
+    },
+    {
+      "code": "CUB",
+      "name": "Cuba",
+      "bbox": [
+        -84.97,
+        19.83,
+        -74.18,
+        23.19
+      ]
+    },
+    {
+      "code": "CYP",
+      "name": "Cyprus",
+      "bbox": [
+        32.27,
+        34.57,
+        34.6,
+        35.7
+      ]
+    },
+    {
+      "code": "CZE",
+      "name": "Czechia",
+      "bbox": [
+        12.09,
+        48.55,
+        18.86,
+        51.06
+      ]
+    },
+    {
+      "code": "DNK",
+      "name": "Denmark",
+      "bbox": [
+        8.09,
+        54.56,
+        15.2,
+        57.75
+      ]
+    },
+    {
+      "code": "DJI",
+      "name": "Djibouti",
+      "bbox": [
+        41.77,
+        10.93,
+        43.42,
+        12.71
+      ]
+    },
+    {
+      "code": "DMA",
+      "name": "Dominica",
+      "bbox": [
+        -61.48,
+        15.2,
+        -61.24,
+        15.65
+      ]
+    },
+    {
+      "code": "DOM",
+      "name": "Dominican Republic",
+      "bbox": [
+        -72.0,
+        17.47,
+        -68.32,
+        19.93
+      ]
+    },
+    {
+      "code": "ECU",
+      "name": "Ecuador",
+      "bbox": [
+        -81.08,
+        -5.0,
+        -75.19,
+        1.68
+      ]
+    },
+    {
+      "code": "EGY",
+      "name": "Egypt",
+      "bbox": [
+        24.7,
+        22.0,
+        36.87,
+        31.67
+      ]
+    },
+    {
+      "code": "SLV",
+      "name": "El Salvador",
+      "bbox": [
+        -90.13,
+        13.15,
+        -87.69,
+        14.45
+      ]
+    },
+    {
+      "code": "GNQ",
+      "name": "Equatorial Guinea",
+      "bbox": [
+        5.61,
+        -1.47,
+        11.34,
+        3.79
+      ]
+    },
+    {
+      "code": "ERI",
+      "name": "Eritrea",
+      "bbox": [
+        36.32,
+        12.36,
+        43.14,
+        18.0
+      ]
+    },
+    {
+      "code": "EST",
+      "name": "Estonia",
+      "bbox": [
+        21.76,
+        57.52,
+        28.21,
+        59.69
+      ]
+    },
+    {
+      "code": "SWZ",
+      "name": "Eswatini",
+      "bbox": [
+        30.79,
+        -27.32,
+        32.13,
+        -25.72
+      ]
+    },
+    {
+      "code": "ETH",
+      "name": "Ethiopia",
+      "bbox": [
+        32.95,
+        3.4,
+        47.99,
+        14.89
+      ]
+    },
+    {
+      "code": "FJI",
+      "name": "Fiji",
+      "bbox": [
+        176.0,
+        -20.68,
+        -179.79,
+        -12.48
+      ]
+    },
+    {
+      "code": "FIN",
+      "name": "Finland",
+      "bbox": [
+        20.65,
+        59.81,
+        31.58,
+        70.09
+      ]
+    },
+    {
+      "code": "FRA",
+      "name": "France",
+      "bbox": [
+        -5.14,
+        41.36,
+        9.56,
+        51.09
+      ]
+    },
+    {
+      "code": "GAB",
+      "name": "Gabon",
+      "bbox": [
+        8.8,
+        -3.98,
+        14.5,
+        2.33
+      ]
+    },
+    {
+      "code": "GMB",
+      "name": "Gambia",
+      "bbox": [
+        -16.82,
+        13.06,
+        -13.79,
+        13.83
+      ]
+    },
+    {
+      "code": "GEO",
+      "name": "Georgia",
+      "bbox": [
+        40.01,
+        41.05,
+        46.74,
+        43.59
+      ]
+    },
+    {
+      "code": "DEU",
+      "name": "Germany",
+      "bbox": [
+        5.87,
+        47.27,
+        15.04,
+        55.06
+      ]
+    },
+    {
+      "code": "GHA",
+      "name": "Ghana",
+      "bbox": [
+        -3.26,
+        4.74,
+        1.19,
+        11.17
+      ]
+    },
+    {
+      "code": "GRC",
+      "name": "Greece",
+      "bbox": [
+        19.37,
+        34.8,
+        29.65,
+        41.75
+      ]
+    },
+    {
+      "code": "GRD",
+      "name": "Grenada",
+      "bbox": [
+        -61.8,
+        11.98,
+        -61.38,
+        12.53
+      ]
+    },
+    {
+      "code": "GTM",
+      "name": "Guatemala",
+      "bbox": [
+        -92.23,
+        13.74,
+        -88.22,
+        17.82
+      ]
+    },
+    {
+      "code": "GIN",
+      "name": "Guinea",
+      "bbox": [
+        -15.13,
+        7.19,
+        -7.83,
+        12.68
+      ]
+    },
+    {
+      "code": "GNB",
+      "name": "Guinea-Bissau",
+      "bbox": [
+        -16.71,
+        10.93,
+        -13.64,
+        12.68
+      ]
+    },
+    {
+      "code": "GUY",
+      "name": "Guyana",
+      "bbox": [
+        -61.41,
+        1.17,
+        -56.47,
+        8.56
+      ]
+    },
+    {
+      "code": "HTI",
+      "name": "Haiti",
+      "bbox": [
+        -74.48,
+        18.03,
+        -71.62,
+        20.09
+      ]
+    },
+    {
+      "code": "HND",
+      "name": "Honduras",
+      "bbox": [
+        -89.35,
+        12.98,
+        -83.13,
+        16.52
+      ]
+    },
+    {
+      "code": "HUN",
+      "name": "Hungary",
+      "bbox": [
+        16.11,
+        45.74,
+        22.9,
+        48.59
+      ]
+    },
+    {
+      "code": "ISL",
+      "name": "Iceland",
+      "bbox": [
+        -24.33,
+        63.39,
+        -13.5,
+        66.53
+      ]
+    },
+    {
+      "code": "IND",
+      "name": "India",
+      "bbox": [
+        68.18,
+        6.75,
+        97.4,
+        35.5
+      ]
+    },
+    {
+      "code": "IDN",
+      "name": "Indonesia",
+      "bbox": [
+        95.29,
+        -11.01,
+        141.02,
+        5.91
+      ]
+    },
+    {
+      "code": "IRN",
+      "name": "Iran",
+      "bbox": [
+        44.05,
+        25.06,
+        63.32,
+        39.78
+      ]
+    },
+    {
+      "code": "IRQ",
+      "name": "Iraq",
+      "bbox": [
+        38.79,
+        29.06,
+        48.57,
+        37.38
+      ]
+    },
+    {
+      "code": "IRL",
+      "name": "Ireland",
+      "bbox": [
+        -10.48,
+        51.42,
+        -6.01,
+        55.38
+      ]
+    },
+    {
+      "code": "ISR",
+      "name": "Israel",
+      "bbox": [
+        34.27,
+        29.5,
+        35.84,
+        33.34
+      ]
+    },
+    {
+      "code": "ITA",
+      "name": "Italy",
+      "bbox": [
+        6.63,
+        36.62,
+        18.52,
+        47.09
+      ]
+    },
+    {
+      "code": "JAM",
+      "name": "Jamaica",
+      "bbox": [
+        -78.37,
+        17.7,
+        -76.18,
+        18.52
+      ]
+    },
+    {
+      "code": "JPN",
+      "name": "Japan",
+      "bbox": [
+        122.93,
+        24.05,
+        153.99,
+        45.55
+      ]
+    },
+    {
+      "code": "JOR",
+      "name": "Jordan",
+      "bbox": [
+        34.96,
+        29.19,
+        39.3,
+        33.38
+      ]
+    },
+    {
+      "code": "KAZ",
+      "name": "Kazakhstan",
+      "bbox": [
+        46.47,
+        40.66,
+        87.36,
+        55.45
+      ]
+    },
+    {
+      "code": "KEN",
+      "name": "Kenya",
+      "bbox": [
+        33.89,
+        -4.68,
+        41.86,
+        5.51
+      ]
+    },
+    {
+      "code": "KIR",
+      "name": "Kiribati",
+      "bbox": [
+        169.56,
+        -11.44,
+        -150.22,
+        4.72
+      ]
+    },
+    {
+      "code": "PRK",
+      "name": "North Korea",
+      "bbox": [
+        124.27,
+        37.67,
+        130.78,
+        43.01
+      ]
+    },
+    {
+      "code": "KOR",
+      "name": "South Korea",
+      "bbox": [
+        124.6,
+        33.11,
+        131.87,
+        38.61
+      ]
+    },
+    {
+      "code": "KWT",
+      "name": "Kuwait",
+      "bbox": [
+        46.55,
+        28.52,
+        48.42,
+        30.1
+      ]
+    },
+    {
+      "code": "KGZ",
+      "name": "Kyrgyzstan",
+      "bbox": [
+        69.28,
+        39.17,
+        80.23,
+        43.27
+      ]
+    },
+    {
+      "code": "LAO",
+      "name": "Laos",
+      "bbox": [
+        100.09,
+        13.91,
+        107.64,
+        22.5
+      ]
+    },
+    {
+      "code": "LVA",
+      "name": "Latvia",
+      "bbox": [
+        20.97,
+        55.67,
+        28.24,
+        58.08
+      ]
+    },
+    {
+      "code": "LBN",
+      "name": "Lebanon",
+      "bbox": [
+        35.1,
+        33.05,
+        36.62,
+        34.69
+      ]
+    },
+    {
+      "code": "LSO",
+      "name": "Lesotho",
+      "bbox": [
+        27.01,
+        -30.68,
+        29.46,
+        -28.57
+      ]
+    },
+    {
+      "code": "LBR",
+      "name": "Liberia",
+      "bbox": [
+        -11.49,
+        4.35,
+        -7.37,
+        8.55
+      ]
+    },
+    {
+      "code": "LBY",
+      "name": "Libya",
+      "bbox": [
+        9.39,
+        19.5,
+        25.15,
+        33.17
+      ]
+    },
+    {
+      "code": "LIE",
+      "name": "Liechtenstein",
+      "bbox": [
+        9.47,
+        47.05,
+        9.64,
+        47.27
+      ]
+    },
+    {
+      "code": "LTU",
+      "name": "Lithuania",
+      "bbox": [
+        20.93,
+        53.9,
+        26.84,
+        56.45
+      ]
+    },
+    {
+      "code": "LUX",
+      "name": "Luxembourg",
+      "bbox": [
+        5.73,
+        49.44,
+        6.53,
+        50.18
+      ]
+    },
+    {
+      "code": "MDG",
+      "name": "Madagascar",
+      "bbox": [
+        43.22,
+        -25.61,
+        50.48,
+        -11.95
+      ]
+    },
+    {
+      "code": "MWI",
+      "name": "Malawi",
+      "bbox": [
+        32.67,
+        -17.13,
+        35.92,
+        -9.37
+      ]
+    },
+    {
+      "code": "MYS",
+      "name": "Malaysia",
+      "bbox": [
+        99.64,
+        0.85,
+        119.27,
+        7.36
+      ]
+    },
+    {
+      "code": "MDV",
+      "name": "Maldives",
+      "bbox": [
+        72.68,
+        -0.69,
+        73.75,
+        7.1
+      ]
+    },
+    {
+      "code": "MLI",
+      "name": "Mali",
+      "bbox": [
+        -12.24,
+        10.16,
+        4.27,
+        25.0
+      ]
+    },
+    {
+      "code": "MLT",
+      "name": "Malta",
+      "bbox": [
+        14.18,
+        35.81,
+        14.57,
+        36.08
+      ]
+    },
+    {
+      "code": "MHL",
+      "name": "Marshall Islands",
+      "bbox": [
+        160.8,
+        4.57,
+        172.17,
+        14.61
+      ]
+    },
+    {
+      "code": "MRT",
+      "name": "Mauritania",
+      "bbox": [
+        -17.07,
+        14.72,
+        -4.83,
+        27.3
+      ]
+    },
+    {
+      "code": "MUS",
+      "name": "Mauritius",
+      "bbox": [
+        57.3,
+        -20.53,
+        57.81,
+        -19.97
+      ]
+    },
+    {
+      "code": "MEX",
+      "name": "Mexico",
+      "bbox": [
+        -117.13,
+        14.53,
+        -86.81,
+        32.72
+      ]
+    },
+    {
+      "code": "FSM",
+      "name": "Micronesia",
+      "bbox": [
+        137.33,
+        1.03,
+        163.04,
+        10.09
+      ]
+    },
+    {
+      "code": "MDA",
+      "name": "Moldova",
+      "bbox": [
+        26.62,
+        45.49,
+        30.16,
+        48.49
+      ]
+    },
+    {
+      "code": "MCO",
+      "name": "Monaco",
+      "bbox": [
+        7.41,
+        43.72,
+        7.44,
+        43.75
+      ]
+    },
+    {
+      "code": "MNG",
+      "name": "Mongolia",
+      "bbox": [
+        87.75,
+        41.58,
+        119.77,
+        52.15
+      ]
+    },
+    {
+      "code": "MNE",
+      "name": "Montenegro",
+      "bbox": [
+        18.46,
+        41.85,
+        20.35,
+        43.56
+      ]
+    },
+    {
+      "code": "MAR",
+      "name": "Morocco",
+      "bbox": [
+        -13.17,
+        27.67,
+        -0.99,
+        35.93
+      ]
+    },
+    {
+      "code": "MOZ",
+      "name": "Mozambique",
+      "bbox": [
+        30.22,
+        -26.87,
+        40.84,
+        -10.47
+      ]
+    },
+    {
+      "code": "MMR",
+      "name": "Myanmar",
+      "bbox": [
+        92.19,
+        9.6,
+        101.17,
+        28.54
+      ]
+    },
+    {
+      "code": "NAM",
+      "name": "Namibia",
+      "bbox": [
+        11.73,
+        -29.05,
+        25.26,
+        -16.96
+      ]
+    },
+    {
+      "code": "NRU",
+      "name": "Nauru",
+      "bbox": [
+        166.9,
+        -0.56,
+        166.96,
+        -0.5
+      ]
+    },
+    {
+      "code": "NPL",
+      "name": "Nepal",
+      "bbox": [
+        80.06,
+        26.35,
+        88.17,
+        30.45
+      ]
+    },
+    {
+      "code": "NLD",
+      "name": "Netherlands",
+      "bbox": [
+        3.36,
+        50.75,
+        7.21,
+        53.47
+      ]
+    },
+    {
+      "code": "NZL",
+      "name": "New Zealand",
+      "bbox": [
+        166.43,
+        -47.29,
+        178.55,
+        -34.39
+      ]
+    },
+    {
+      "code": "NIC",
+      "name": "Nicaragua",
+      "bbox": [
+        -87.69,
+        10.73,
+        -82.73,
+        15.02
+      ]
+    },
+    {
+      "code": "NER",
+      "name": "Niger",
+      "bbox": [
+        0.17,
+        11.69,
+        15.9,
+        23.52
+      ]
+    },
+    {
+      "code": "NGA",
+      "name": "Nigeria",
+      "bbox": [
+        2.69,
+        4.24,
+        14.68,
+        13.87
+      ]
+    },
+    {
+      "code": "MKD",
+      "name": "North Macedonia",
+      "bbox": [
+        20.46,
+        40.85,
+        23.04,
+        42.36
+      ]
+    },
+    {
+      "code": "NOR",
+      "name": "Norway",
+      "bbox": [
+        4.65,
+        57.96,
+        31.08,
+        71.19
+      ]
+    },
+    {
+      "code": "OMN",
+      "name": "Oman",
+      "bbox": [
+        51.88,
+        16.65,
+        59.81,
+        26.4
+      ]
+    },
+    {
+      "code": "PAK",
+      "name": "Pakistan",
+      "bbox": [
+        60.87,
+        23.69,
+        77.84,
+        37.13
+      ]
+    },
+    {
+      "code": "PLW",
+      "name": "Palau",
+      "bbox": [
+        131.12,
+        2.75,
+        134.73,
+        8.1
+      ]
+    },
+    {
+      "code": "PSE",
+      "name": "Palestine",
+      "bbox": [
+        34.22,
+        31.22,
+        35.57,
+        32.55
+      ]
+    },
+    {
+      "code": "PAN",
+      "name": "Panama",
+      "bbox": [
+        -83.05,
+        7.2,
+        -77.17,
+        9.61
+      ]
+    },
+    {
+      "code": "PNG",
+      "name": "Papua New Guinea",
+      "bbox": [
+        140.84,
+        -11.66,
+        159.49,
+        -1.35
+      ]
+    },
+    {
+      "code": "PRY",
+      "name": "Paraguay",
+      "bbox": [
+        -62.64,
+        -27.59,
+        -54.29,
+        -19.29
+      ]
+    },
+    {
+      "code": "PER",
+      "name": "Peru",
+      "bbox": [
+        -81.33,
+        -18.35,
+        -68.65,
+        -0.04
+      ]
+    },
+    {
+      "code": "PHL",
+      "name": "Philippines",
+      "bbox": [
+        116.95,
+        4.59,
+        126.6,
+        21.12
+      ]
+    },
+    {
+      "code": "POL",
+      "name": "Poland",
+      "bbox": [
+        14.07,
+        49.0,
+        24.15,
+        54.84
+      ]
+    },
+    {
+      "code": "PRT",
+      "name": "Portugal",
+      "bbox": [
+        -9.53,
+        36.84,
+        -6.19,
+        42.15
+      ]
+    },
+    {
+      "code": "QAT",
+      "name": "Qatar",
+      "bbox": [
+        50.76,
+        24.47,
+        51.64,
+        26.15
+      ]
+    },
+    {
+      "code": "ROU",
+      "name": "Romania",
+      "bbox": [
+        20.22,
+        43.62,
+        29.69,
+        48.27
+      ]
+    },
+    {
+      "code": "RUS",
+      "name": "Russia",
+      "bbox": [
+        19.64,
+        41.19,
+        180.0,
+        81.86
+      ]
+    },
+    {
+      "code": "RWA",
+      "name": "Rwanda",
+      "bbox": [
+        28.86,
+        -2.84,
+        30.9,
+        -1.05
+      ]
+    },
+    {
+      "code": "KNA",
+      "name": "Saint Kitts and Nevis",
+      "bbox": [
+        -62.87,
+        17.09,
+        -62.54,
+        17.42
+      ]
+    },
+    {
+      "code": "LCA",
+      "name": "Saint Lucia",
+      "bbox": [
+        -61.08,
+        13.71,
+        -60.87,
+        14.11
+      ]
+    },
+    {
+      "code": "VCT",
+      "name": "Saint Vincent and the Grenadines",
+      "bbox": [
+        -61.46,
+        12.58,
+        -61.11,
+        13.38
+      ]
+    },
+    {
+      "code": "WSM",
+      "name": "Samoa",
+      "bbox": [
+        -172.8,
+        -14.08,
+        -171.41,
+        -13.43
+      ]
+    },
+    {
+      "code": "SMR",
+      "name": "San Marino",
+      "bbox": [
+        12.4,
+        43.89,
+        12.52,
+        43.99
+      ]
+    },
+    {
+      "code": "STP",
+      "name": "S\u00e3o Tom\u00e9 and Pr\u00edncipe",
+      "bbox": [
+        6.47,
+        0.02,
+        7.47,
+        1.7
+      ]
+    },
+    {
+      "code": "SAU",
+      "name": "Saudi Arabia",
+      "bbox": [
+        34.63,
+        16.38,
+        55.67,
+        32.16
+      ]
+    },
+    {
+      "code": "SEN",
+      "name": "Senegal",
+      "bbox": [
+        -17.54,
+        12.31,
+        -11.36,
+        16.69
+      ]
+    },
+    {
+      "code": "SRB",
+      "name": "Serbia",
+      "bbox": [
+        18.82,
+        42.23,
+        23.01,
+        46.19
+      ]
+    },
+    {
+      "code": "SYC",
+      "name": "Seychelles",
+      "bbox": [
+        46.2,
+        -10.23,
+        56.29,
+        -3.71
+      ]
+    },
+    {
+      "code": "SLE",
+      "name": "Sierra Leone",
+      "bbox": [
+        -13.25,
+        6.93,
+        -10.27,
+        10.0
+      ]
+    },
+    {
+      "code": "SGP",
+      "name": "Singapore",
+      "bbox": [
+        103.64,
+        1.17,
+        104.01,
+        1.47
+      ]
+    },
+    {
+      "code": "SVK",
+      "name": "Slovakia",
+      "bbox": [
+        16.83,
+        47.73,
+        22.57,
+        49.6
+      ]
+    },
+    {
+      "code": "SVN",
+      "name": "Slovenia",
+      "bbox": [
+        13.38,
+        45.42,
+        16.6,
+        46.88
+      ]
+    },
+    {
+      "code": "SLB",
+      "name": "Solomon Islands",
+      "bbox": [
+        155.51,
+        -11.85,
+        170.19,
+        -5.29
+      ]
+    },
+    {
+      "code": "SOM",
+      "name": "Somalia",
+      "bbox": [
+        40.98,
+        -1.68,
+        51.42,
+        12.02
+      ]
+    },
+    {
+      "code": "ZAF",
+      "name": "South Africa",
+      "bbox": [
+        16.34,
+        -34.84,
+        32.83,
+        -22.13
+      ]
+    },
+    {
+      "code": "SSD",
+      "name": "South Sudan",
+      "bbox": [
+        23.89,
+        3.49,
+        35.95,
+        12.24
+      ]
+    },
+    {
+      "code": "ESP",
+      "name": "Spain",
+      "bbox": [
+        -9.39,
+        35.95,
+        4.31,
+        43.75
+      ]
+    },
+    {
+      "code": "LKA",
+      "name": "Sri Lanka",
+      "bbox": [
+        79.65,
+        5.92,
+        81.88,
+        9.84
+      ]
+    },
+    {
+      "code": "SDN",
+      "name": "Sudan",
+      "bbox": [
+        21.81,
+        8.68,
+        38.58,
+        22.0
+      ]
+    },
+    {
+      "code": "SUR",
+      "name": "Suriname",
+      "bbox": [
+        -58.07,
+        1.83,
+        -53.98,
+        6.01
+      ]
+    },
+    {
+      "code": "SWE",
+      "name": "Sweden",
+      "bbox": [
+        11.11,
+        55.34,
+        24.16,
+        69.06
+      ]
+    },
+    {
+      "code": "CHE",
+      "name": "Switzerland",
+      "bbox": [
+        5.96,
+        45.82,
+        10.49,
+        47.81
+      ]
+    },
+    {
+      "code": "SYR",
+      "name": "Syria",
+      "bbox": [
+        35.73,
+        32.31,
+        42.35,
+        37.32
+      ]
+    },
+    {
+      "code": "TWN",
+      "name": "Taiwan",
+      "bbox": [
+        119.53,
+        21.9,
+        122.0,
+        25.3
+      ]
+    },
+    {
+      "code": "TJK",
+      "name": "Tajikistan",
+      "bbox": [
+        67.39,
+        36.67,
+        75.14,
+        41.04
+      ]
+    },
+    {
+      "code": "TZA",
+      "name": "Tanzania",
+      "bbox": [
+        29.33,
+        -11.75,
+        40.44,
+        -0.99
+      ]
+    },
+    {
+      "code": "THA",
+      "name": "Thailand",
+      "bbox": [
+        97.35,
+        5.61,
+        105.64,
+        20.46
+      ]
+    },
+    {
+      "code": "TLS",
+      "name": "Timor-Leste",
+      "bbox": [
+        124.04,
+        -9.5,
+        127.34,
+        -8.13
+      ]
+    },
+    {
+      "code": "TGO",
+      "name": "Togo",
+      "bbox": [
+        -0.15,
+        6.1,
+        1.81,
+        11.14
+      ]
+    },
+    {
+      "code": "TON",
+      "name": "Tonga",
+      "bbox": [
+        -176.22,
+        -22.35,
+        -173.72,
+        -15.56
+      ]
+    },
+    {
+      "code": "TTO",
+      "name": "Trinidad and Tobago",
+      "bbox": [
+        -61.93,
+        10.04,
+        -60.52,
+        11.36
+      ]
+    },
+    {
+      "code": "TUN",
+      "name": "Tunisia",
+      "bbox": [
+        7.52,
+        30.23,
+        11.6,
+        37.54
+      ]
+    },
+    {
+      "code": "TUR",
+      "name": "Turkey",
+      "bbox": [
+        25.66,
+        35.82,
+        44.79,
+        42.11
+      ]
+    },
+    {
+      "code": "TKM",
+      "name": "Turkmenistan",
+      "bbox": [
+        52.44,
+        35.14,
+        66.68,
+        42.8
+      ]
+    },
+    {
+      "code": "TUV",
+      "name": "Tuvalu",
+      "bbox": [
+        176.06,
+        -10.79,
+        179.87,
+        -5.64
+      ]
+    },
+    {
+      "code": "UGA",
+      "name": "Uganda",
+      "bbox": [
+        29.57,
+        -1.48,
+        35.04,
+        4.23
+      ]
+    },
+    {
+      "code": "UKR",
+      "name": "Ukraine",
+      "bbox": [
+        22.09,
+        44.36,
+        40.08,
+        52.38
+      ]
+    },
+    {
+      "code": "ARE",
+      "name": "United Arab Emirates",
+      "bbox": [
+        51.58,
+        22.63,
+        56.38,
+        26.08
+      ]
+    },
+    {
+      "code": "GBR",
+      "name": "United Kingdom",
+      "bbox": [
+        -8.65,
+        49.86,
+        1.77,
+        60.86
+      ]
+    },
+    {
+      "code": "USA",
+      "name": "United States",
+      "bbox": [
+        -171.8,
+        18.9,
+        -66.9,
+        71.4
+      ]
+    },
+    {
+      "code": "URY",
+      "name": "Uruguay",
+      "bbox": [
+        -58.44,
+        -34.95,
+        -53.07,
+        -30.09
+      ]
+    },
+    {
+      "code": "UZB",
+      "name": "Uzbekistan",
+      "bbox": [
+        55.93,
+        37.14,
+        73.06,
+        45.59
+      ]
+    },
+    {
+      "code": "VUT",
+      "name": "Vanuatu",
+      "bbox": [
+        166.54,
+        -20.25,
+        170.24,
+        -13.07
+      ]
+    },
+    {
+      "code": "VAT",
+      "name": "Vatican City",
+      "bbox": [
+        12.45,
+        41.9,
+        12.46,
+        41.91
+      ]
+    },
+    {
+      "code": "VEN",
+      "name": "Venezuela",
+      "bbox": [
+        -73.3,
+        0.72,
+        -59.76,
+        12.2
+      ]
+    },
+    {
+      "code": "VNM",
+      "name": "Vietnam",
+      "bbox": [
+        102.15,
+        8.56,
+        109.46,
+        23.39
+      ]
+    },
+    {
+      "code": "YEM",
+      "name": "Yemen",
+      "bbox": [
+        42.6,
+        12.59,
+        54.53,
+        19.0
+      ]
+    },
+    {
+      "code": "ZMB",
+      "name": "Zambia",
+      "bbox": [
+        21.99,
+        -18.08,
+        33.71,
+        -8.22
+      ]
+    },
+    {
+      "code": "ZWE",
+      "name": "Zimbabwe",
+      "bbox": [
+        25.24,
+        -22.42,
+        33.06,
+        -15.61
+      ]
+    },
+    {
+      "code": "XKX",
+      "name": "Kosovo",
+      "bbox": [
+        20.01,
+        41.86,
+        21.79,
+        43.27
+      ]
+    },
+    {
+      "code": "ABW",
+      "name": "Aruba",
+      "bbox": [
+        -70.06,
+        12.41,
+        -69.87,
+        12.63
+      ]
+    },
+    {
+      "code": "AIA",
+      "name": "Anguilla",
+      "bbox": [
+        -63.17,
+        18.17,
+        -62.97,
+        18.28
+      ]
+    },
+    {
+      "code": "ASM",
+      "name": "American Samoa",
+      "bbox": [
+        -171.09,
+        -14.38,
+        -168.14,
+        -11.05
+      ]
+    },
+    {
+      "code": "BMU",
+      "name": "Bermuda",
+      "bbox": [
+        -64.89,
+        32.25,
+        -64.65,
+        32.39
+      ]
+    },
+    {
+      "code": "VGB",
+      "name": "British Virgin Islands",
+      "bbox": [
+        -64.71,
+        18.33,
+        -64.27,
+        18.76
+      ]
+    },
+    {
+      "code": "CYM",
+      "name": "Cayman Islands",
+      "bbox": [
+        -81.43,
+        19.26,
+        -79.73,
+        19.76
+      ]
+    },
+    {
+      "code": "COK",
+      "name": "Cook Islands",
+      "bbox": [
+        -165.83,
+        -21.94,
+        -157.31,
+        -8.95
+      ]
+    },
+    {
+      "code": "CUW",
+      "name": "Cura\u00e7ao",
+      "bbox": [
+        -69.16,
+        12.04,
+        -68.74,
+        12.39
+      ]
+    },
+    {
+      "code": "FLK",
+      "name": "Falkland Islands",
+      "bbox": [
+        -61.4,
+        -52.58,
+        -57.73,
+        -51.02
+      ]
+    },
+    {
+      "code": "FRO",
+      "name": "Faroe Islands",
+      "bbox": [
+        -7.4,
+        61.39,
+        -6.26,
+        62.4
+      ]
+    },
+    {
+      "code": "GUF",
+      "name": "French Guiana",
+      "bbox": [
+        -54.6,
+        2.11,
+        -51.61,
+        5.76
+      ]
+    },
+    {
+      "code": "PYF",
+      "name": "French Polynesia",
+      "bbox": [
+        -154.72,
+        -27.64,
+        -134.93,
+        -7.89
+      ]
+    },
+    {
+      "code": "GIB",
+      "name": "Gibraltar",
+      "bbox": [
+        -5.36,
+        36.11,
+        -5.34,
+        36.16
+      ]
+    },
+    {
+      "code": "GRL",
+      "name": "Greenland",
+      "bbox": [
+        -73.05,
+        59.79,
+        -11.31,
+        83.63
+      ]
+    },
+    {
+      "code": "GLP",
+      "name": "Guadeloupe",
+      "bbox": [
+        -61.81,
+        15.83,
+        -61.0,
+        16.51
+      ]
+    },
+    {
+      "code": "GUM",
+      "name": "Guam",
+      "bbox": [
+        144.62,
+        13.24,
+        144.96,
+        13.65
+      ]
+    },
+    {
+      "code": "HKG",
+      "name": "Hong Kong",
+      "bbox": [
+        113.84,
+        22.15,
+        114.41,
+        22.56
+      ]
+    },
+    {
+      "code": "IMN",
+      "name": "Isle of Man",
+      "bbox": [
+        -4.79,
+        54.06,
+        -4.31,
+        54.42
+      ]
+    },
+    {
+      "code": "JEY",
+      "name": "Jersey",
+      "bbox": [
+        -2.26,
+        49.17,
+        -2.0,
+        49.27
+      ]
+    },
+    {
+      "code": "GGY",
+      "name": "Guernsey",
+      "bbox": [
+        -2.67,
+        49.43,
+        -2.5,
+        49.73
+      ]
+    },
+    {
+      "code": "MAC",
+      "name": "Macau",
+      "bbox": [
+        113.53,
+        22.11,
+        113.6,
+        22.22
+      ]
+    },
+    {
+      "code": "MTQ",
+      "name": "Martinique",
+      "bbox": [
+        -61.23,
+        14.39,
+        -60.81,
+        14.88
+      ]
+    },
+    {
+      "code": "MYT",
+      "name": "Mayotte",
+      "bbox": [
+        45.04,
+        -12.99,
+        45.3,
+        -12.64
+      ]
+    },
+    {
+      "code": "MSR",
+      "name": "Montserrat",
+      "bbox": [
+        -62.24,
+        16.67,
+        -62.14,
+        16.82
+      ]
+    },
+    {
+      "code": "NCL",
+      "name": "New Caledonia",
+      "bbox": [
+        163.56,
+        -22.7,
+        168.13,
+        -19.5
+      ]
+    },
+    {
+      "code": "NIU",
+      "name": "Niue",
+      "bbox": [
+        -169.95,
+        -19.15,
+        -169.77,
+        -18.96
+      ]
+    },
+    {
+      "code": "NFK",
+      "name": "Norfolk Island",
+      "bbox": [
+        167.91,
+        -29.08,
+        167.99,
+        -28.99
+      ]
+    },
+    {
+      "code": "MNP",
+      "name": "Northern Mariana Islands",
+      "bbox": [
+        144.9,
+        14.11,
+        146.07,
+        20.56
+      ]
+    },
+    {
+      "code": "REU",
+      "name": "R\u00e9union",
+      "bbox": [
+        55.22,
+        -21.39,
+        55.84,
+        -20.87
+      ]
+    },
+    {
+      "code": "BLM",
+      "name": "Saint Barth\u00e9lemy",
+      "bbox": [
+        -62.88,
+        17.88,
+        -62.79,
+        17.93
+      ]
+    },
+    {
+      "code": "SHN",
+      "name": "Saint Helena",
+      "bbox": [
+        -5.79,
+        -16.02,
+        -5.64,
+        -15.9
+      ]
+    },
+    {
+      "code": "MAF",
+      "name": "Saint Martin",
+      "bbox": [
+        -63.15,
+        18.05,
+        -63.01,
+        18.13
+      ]
+    },
+    {
+      "code": "SPM",
+      "name": "Saint Pierre and Miquelon",
+      "bbox": [
+        -56.41,
+        46.75,
+        -56.12,
+        47.14
+      ]
+    },
+    {
+      "code": "SXM",
+      "name": "Sint Maarten",
+      "bbox": [
+        -63.14,
+        18.01,
+        -63.01,
+        18.07
+      ]
+    },
+    {
+      "code": "TCA",
+      "name": "Turks and Caicos Islands",
+      "bbox": [
+        -72.48,
+        21.17,
+        -71.12,
+        21.96
+      ]
+    },
+    {
+      "code": "VIR",
+      "name": "U.S. Virgin Islands",
+      "bbox": [
+        -65.04,
+        17.68,
+        -64.56,
+        18.41
+      ]
+    },
+    {
+      "code": "WLF",
+      "name": "Wallis and Futuna",
+      "bbox": [
+        -178.19,
+        -14.32,
+        -176.12,
+        -13.21
+      ]
+    },
+    {
+      "code": "ESH",
+      "name": "Western Sahara",
+      "bbox": [
+        -17.1,
+        20.77,
+        -8.67,
+        27.67
+      ]
+    },
+    {
+      "code": "PCN",
+      "name": "Pitcairn Islands",
+      "bbox": [
+        -130.11,
+        -25.08,
+        -124.77,
+        -23.92
+      ]
+    },
+    {
+      "code": "TKL",
+      "name": "Tokelau",
+      "bbox": [
+        -172.5,
+        -9.44,
+        -171.21,
+        -8.55
+      ]
+    },
+    {
+      "code": "PRI",
+      "name": "Puerto Rico",
+      "bbox": [
+        -67.27,
+        17.88,
+        -65.59,
+        18.52
+      ]
+    },
+    {
+      "code": "SGS",
+      "name": "South Georgia and the South Sandwich Islands",
+      "bbox": [
+        -38.02,
+        -59.47,
+        -26.24,
+        -53.97
+      ]
+    },
+    {
+      "code": "ATA",
+      "name": "Antarctica",
+      "bbox": [
+        -180.0,
+        -90.0,
+        180.0,
+        -60.0
+      ]
+    },
+    {
+      "code": "BVT",
+      "name": "Bouvet Island",
+      "bbox": [
+        3.29,
+        -54.46,
+        3.49,
+        -54.38
+      ]
+    },
+    {
+      "code": "IOT",
+      "name": "British Indian Ocean Territory",
+      "bbox": [
+        71.26,
+        -7.44,
+        72.49,
+        -5.23
+      ]
+    },
+    {
+      "code": "CCK",
+      "name": "Cocos (Keeling) Islands",
+      "bbox": [
+        96.82,
+        -12.21,
+        96.93,
+        -11.82
+      ]
+    },
+    {
+      "code": "CXR",
+      "name": "Christmas Island",
+      "bbox": [
+        105.53,
+        -10.57,
+        105.71,
+        -10.41
+      ]
+    },
+    {
+      "code": "HMD",
+      "name": "Heard Island and McDonald Islands",
+      "bbox": [
+        73.24,
+        -53.19,
+        73.77,
+        -52.96
+      ]
+    },
+    {
+      "code": "ATF",
+      "name": "French Southern Territories",
+      "bbox": [
+        68.72,
+        -49.73,
+        70.6,
+        -48.45
+      ]
+    },
+    {
+      "code": "SJM",
+      "name": "Svalbard and Jan Mayen",
+      "bbox": [
+        -9.12,
+        70.8,
+        33.64,
+        80.83
+      ]
+    },
+    {
+      "code": "UMI",
+      "name": "United States Minor Outlying Islands",
+      "bbox": [
+        -177.5,
+        28.15,
+        -177.3,
+        28.25
+      ]
+    }
   ]
 }
