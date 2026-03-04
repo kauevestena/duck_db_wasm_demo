@@ -76,10 +76,8 @@ await db.instantiate(bundle.mainModule);
 
 const conn = await db.connect();
 
-await conn.query(`
-INSTALL spatial;
-LOAD spatial;
-`);
+await conn.query("INSTALL spatial;");
+await conn.query("LOAD spatial;");
 
 document.getElementById("status").innerText = "DuckDB ready";
 
@@ -153,34 +151,41 @@ async function loadBuildings(){
   document.getElementById("status").innerText =
     "Loading " + country + " buildings...";
 
-  const sql = `
-  SELECT
-    ST_AsGeoJSON(geometry) AS geom
-  FROM read_parquet('${dataset}')
-  WHERE
-    bbox.xmin < ${xmax}
-    AND bbox.xmax > ${xmin}
-    AND bbox.ymin < ${ymax}
-    AND bbox.ymax > ${ymin}
-  LIMIT 3000
-  `;
+  try {
 
-  const result = await conn.query(sql);
-  const rows = result.toArray();
+    const sql = `
+    SELECT
+      ST_AsGeoJSON(geometry) AS geom
+    FROM read_parquet('${dataset}')
+    WHERE
+      bbox.xmin < ${xmax}
+      AND bbox.xmax > ${xmin}
+      AND bbox.ymin < ${ymax}
+      AND bbox.ymax > ${ymin}
+    LIMIT 3000
+    `;
 
-  const features = rows.map(r => ({
-    type:"Feature",
-    geometry:JSON.parse(r.geom),
-    properties:{}
-  }));
+    const result = await conn.query(sql);
+    const rows = result.toArray();
 
-  map.getSource("buildings").setData({
-    type:"FeatureCollection",
-    features
-  });
+    const features = rows.map(r => ({
+      type:"Feature",
+      geometry:JSON.parse(r.geom),
+      properties:{}
+    }));
 
-  document.getElementById("status").innerText =
-    features.length + " buildings";
+    map.getSource("buildings").setData({
+      type:"FeatureCollection",
+      features
+    });
+
+    document.getElementById("status").innerText =
+      features.length + " buildings";
+
+  } catch(e) {
+    console.error("loadBuildings error:", e);
+    document.getElementById("status").innerText = "Error: " + e.message;
+  }
 }
 
 map.on("moveend", loadBuildings);
