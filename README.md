@@ -1,6 +1,6 @@
 # 🌍 Global Buildings Viewer (DuckDB-WASM)
 
-A **fully serverless global building viewer** powered by:
+A test **fully serverless global building viewer** powered by:
 
 * **DuckDB-WASM**
 * **MapLibre GL**
