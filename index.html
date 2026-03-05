@@ -163,6 +163,8 @@ const conn = await db.connect();
 await conn.query("INSTALL spatial;");
 await conn.query("LOAD spatial;");
 
+window.conn = conn; // Expose conn for debugging/testing
+
 document.getElementById("status").innerText = "DuckDB ready";
 
 
@@ -236,6 +238,10 @@ async function loadBuildings(){
       ST_AsGeoJSON(geometry) AS geom
     FROM read_parquet('${dataset}')
     WHERE
+      bbox.xmin <= ${xmax} AND
+      bbox.xmax >= ${xmin} AND
+      bbox.ymin <= ${ymax} AND
+      bbox.ymax >= ${ymin} AND
       ST_Intersects(
         geometry,
         ST_MakeEnvelope(${xmin}, ${ymin}, ${xmax}, ${ymax})
