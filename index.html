@@ -48,6 +48,7 @@ html, body { margin:0; padding:0; height:100%; }
     <option value="demotiles">MapLibre Demo</option>
     <option value="osm">OSM Default</option>
     <option value="positron">Carto Positron</option>
+    <option value="blank">Blank Background</option>
   </select>
 </div>
 
@@ -91,7 +92,18 @@ const BASEMAP_STYLES = {
     },
     layers:[{id:"osm-tiles",type:"raster",source:"osm-raster"}]
   },
-  positron: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
+  positron: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
+  blank: {
+    version: 8,
+    sources: {},
+    layers: [{
+      id: "background",
+      type: "background",
+      paint: {
+        "background-color": "#ffffff"
+      }
+    }]
+  }
 };
 
 /* Map */
@@ -101,6 +113,7 @@ const map = new maplibregl.Map({
   center:[0,20],
   zoom:3
 });
+window.map = map; // Expose for testing
 
 /* Re-add buildings layer after style change */
 function addBuildingsLayer(){
@@ -118,6 +131,10 @@ function addBuildingsLayer(){
       "fill-opacity":0.5
     }
   });
+  // Trigger a reload of buildings once the layer is re-added
+  if (typeof loadBuildings !== 'undefined') {
+    loadBuildings();
+  }
 }
 
 /* Basemap switcher */
