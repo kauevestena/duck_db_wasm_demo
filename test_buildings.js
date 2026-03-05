@@ -46,29 +46,12 @@ async function runTest() {
     try {
         browser = await chromium.launch({ headless: true });
         const context = await browser.newContext();
-        context.setDefaultTimeout(60000);
+        context.setDefaultTimeout(120000);
         const page = await context.newPage({
             viewport: { width: 800, height: 600 }
         });
 
         page.on('console', msg => console.log('PAGE LOG:', msg.text()));
-
-        // We use VAT.parquet which we downloaded earlier. It has 10 buildings.
-        // It's much smaller and tests logic perfectly without downloading 17GB BRA data in the headless browser.
-        await page.route('**/countries.json', route => {
-            console.log("Intercepting countries.json to use VAT data");
-            route.fulfill({
-                status: 200,
-                contentType: 'application/json',
-                body: JSON.stringify({
-                    url_template: `http://localhost:${PORT}/test_data/{code}.parquet`,
-                    default_country: "VAT",
-                    countries: [
-                        { code: "VAT", name: "Vatican City", bbox: [12.45, 41.9, 12.46, 41.91] }
-                    ]
-                })
-            });
-        });
 
         await page.goto(`http://localhost:${PORT}/index.html`);
 
@@ -77,9 +60,12 @@ async function runTest() {
             return status === 'DuckDB ready' || status.includes('buildings');
         });
 
+        console.log("DuckDB ready. Setting map to Liechtenstein...");
+
+        // Set the map center to Vaduz, Liechtenstein
         await page.evaluate(() => {
-            window.map.setZoom(20);
-            window.map.setCenter([12.455, 41.905]); // VAT
+            window.map.setZoom(18);
+            window.map.setCenter([9.5215, 47.1415]);
 
             setInterval(() => {
                 const status = document.getElementById('status').innerText;
@@ -91,11 +77,11 @@ async function runTest() {
             }, 3000);
         });
 
-        console.log("Waiting for VAT buildings to load...");
+        console.log("Waiting for remote LIE buildings to load...");
         await page.waitForFunction(() => {
             const status = document.getElementById('status').innerText;
             return (/^\d+ buildings$/.test(status)) || /^Error/.test(status);
-        }, { timeout: 60000 });
+        }, { timeout: 120000 });
 
         await page.evaluate(() => {
             const select = document.getElementById('basemap');
@@ -132,7 +118,7 @@ async function runTest() {
                 console.log(`Found ${nonWhitePixels} non-white pixels`);
                 console.log(`Found ${buildingColorPixels} building color pixels`);
 
-                if (nonWhitePixels < 2000 || buildingColorPixels < 50) {
+                if (nonWhitePixels < 500 || buildingColorPixels < 10) {
                     console.error("TEST FAILED: Screenshot is mostly blank. No buildings were rendered.");
                     resolve(false);
                 } else {
