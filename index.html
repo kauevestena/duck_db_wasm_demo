@@ -236,12 +236,16 @@ async function loadBuildings(){
     const sql = `
     SELECT
       ST_AsGeoJSON(geometry) AS geom
-    FROM read_parquet('${dataset}')
+    FROM (
+      SELECT *
+      FROM read_parquet('${dataset}')
+      WHERE
+        bbox.xmin <= ${xmax} AND
+        bbox.xmax >= ${xmin} AND
+        bbox.ymin <= ${ymax} AND
+        bbox.ymax >= ${ymin}
+    )
     WHERE
-      bbox.xmin <= ${xmax} AND
-      bbox.xmax >= ${xmin} AND
-      bbox.ymin <= ${ymax} AND
-      bbox.ymax >= ${ymin} AND
       ST_Intersects(
         geometry,
         ST_MakeEnvelope(${xmin}, ${ymin}, ${xmax}, ${ymax})
