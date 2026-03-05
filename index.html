@@ -258,9 +258,13 @@ async function loadBuildings(){
 
       const rows = batch.toArray();
       for(const r of rows){
+        // get geom whether it is a direct property or nested inside toJSON()
+        const geomStr = r.geom || (r.toJSON ? r.toJSON().geom : null);
+        if (!geomStr) continue;
+
         features.push({
           type:"Feature",
-          geometry:JSON.parse(r.geom),
+          geometry:JSON.parse(geomStr),
           properties:{}
         });
       }
@@ -280,7 +284,7 @@ async function loadBuildings(){
 
   } catch(e) {
     if(queryId !== currentQueryId) return;
-    console.error("loadBuildings error:", e);
+    console.error("loadBuildings error:", e, e.stack);
     document.getElementById("status").innerText = "Error: " + e.message;
   }
 }
