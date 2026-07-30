@@ -170,6 +170,7 @@ await conn.query("INSTALL spatial;");
 await conn.query("LOAD spatial;");
 
 window.conn = conn; // Expose conn for debugging/testing
+window.db = db; // Expose db for debugging/testing
 
 document.getElementById("status").innerText = "DuckDB ready";
 
@@ -203,6 +204,7 @@ function detectCountry(lon, lat){
 
 /* Query – stream results so buildings appear as they arrive */
 let currentQueryId = 0;
+let activeQueryConn = null;
 
 async function loadBuildings(){
 
@@ -217,6 +219,16 @@ async function loadBuildings(){
   }
 
   const queryId = ++currentQueryId;
+
+  // Abort any running query on previous connection
+  if (activeQueryConn) {
+    try {
+      await activeQueryConn.close();
+    } catch (e) {
+      // Ignore
+    }
+    activeQueryConn = null;
+  }
 
   const bounds = map.getBounds();
 
@@ -239,17 +251,24 @@ async function loadBuildings(){
 
   try {
 
+    const virtualFileName = `${country}.parquet`;
+    await db.registerFileURL(virtualFileName, dataset, duckdb.DuckDBDataProtocol.HTTP, false);
+
+    const queryConn = await db.connect();
+    activeQueryConn = queryConn;
+
     const sql = `
     SELECT
       ST_AsGeoJSON(geometry) AS geom
     FROM (
       SELECT *
-      FROM read_parquet('${dataset}')
+      FROM read_parquet('${virtualFileName}')
       WHERE
         bbox.xmin <= ${xmax} AND
         bbox.xmax >= ${xmin} AND
         bbox.ymin <= ${ymax} AND
         bbox.ymax >= ${ymin}
+      OFFSET 0
     )
     WHERE
       ST_Intersects(
@@ -259,12 +278,17 @@ async function loadBuildings(){
     LIMIT 3000
     `;
 
-    const stream = await conn.send(sql);
+    const stream = await queryConn.send(sql);
     const features = [];
 
     for await(const batch of stream){
       /* Abort if a newer query has started */
-      if(queryId !== currentQueryId) return;
+      if(queryId !== currentQueryId) {
+        try {
+          await queryConn.close();
+        } catch (e) {}
+        return;
+      }
 
       const rows = batch.toArray();
       for(const r of rows){
@@ -280,14 +304,31 @@ async function loadBuildings(){
       }
 
       const source = map.getSource("buildings");
-      if(!source) return;
+      if(!source) {
+        try {
+          await queryConn.close();
+        } catch (e) {}
+        return;
+      }
       source.setData({type:"FeatureCollection",features});
 
       document.getElementById("status").innerText =
         features.length + " buildings (loading...)";
     }
 
-    if(queryId !== currentQueryId) return;
+    if(queryId !== currentQueryId) {
+      try {
+        await queryConn.close();
+      } catch (e) {}
+      return;
+    }
+
+    try {
+      await queryConn.close();
+    } catch (e) {}
+    if (activeQueryConn === queryConn) {
+      activeQueryConn = null;
+    }
 
     document.getElementById("status").innerText =
       features.length + " buildings";
