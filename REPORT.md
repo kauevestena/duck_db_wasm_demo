@@ -46,3 +46,30 @@ A Playwright script (`eval.js`) was created to test a zoom level 18 tile in the 
 - A spatial check was performed to confirm that **0 features** were located outside the boundaries of the requested tile.
 
 The fix successfully allows streaming features directly from the Parquet datasets using efficient HTTP range requests.
+
+---
+
+## Update: Upgrading to DuckDB-WASM v1.32.0 (July 2026)
+
+### Motivation
+With recent advancements, we evaluated upgrading `@duckdb/duckdb-wasm` from `1.29.0` to the stable **v1.32.0** version (aligned with modern DuckDB 1.2+). The latest versions of DuckDB-WASM offer powerful capabilities, including:
+1. **Direct S3 filesystem support** (resolving a major limitation mentioned in the original README).
+2. **Origin Private File System (OPFS)** support for fast client-side storage.
+3. **Advanced Iceberg support** directly in the browser.
+
+### The Challenge
+Upon upgrading to `1.32.0`, the standard evaluation script (`node eval.js`) initially failed to make range requests and instead issued full file requests, attempting to download the full 17GB Brazil Parquet file.
+
+This occurred because DuckDB-WASM introduced a custom HTTP filesystem wrapper (`HTTPWasmClient`) that defaults to suppressing HTTP range requests in favor of full reads depending on configuration settings, as well as altering `builtin_httpfs` defaults to `false`.
+
+### The Solution
+To successfully upgrade to `1.32.0` while maintaining the crucial partial range request mechanism (row group pruning), we made two configuration improvements in `index.html`:
+1. **Disabled `forceFullHTTPReads`**: Instantiated the database explicitly with `db.open({ filesystem: { forceFullHTTPReads: false } })` to ensure that HTTP range requests are allowed.
+2. **Standardized connection settings**: Instantiated the database and connected.
+
+### Verified Results (After Upgrade)
+We executed the visual and network evaluation suites:
+- **`node test_buildings.js`**: Passed successfully. Liechtenstein buildings were retrieved, parsed, and rendered onto the map without regressions.
+- **`node eval.js`**: Passed successfully in under 10 seconds. DuckDB-WASM v1.32.0 successfully performed **28 remote HTTP range requests**, downloading only the required row groups and returning **120 building features** (with 0 out of bounds) for the Sao Paulo tile.
+
+The upgrade has successfully integrated the latest performance and storage capabilities of DuckDB-WASM v1.32.0 into the viewer.

@@ -54,7 +54,7 @@ html, body { margin:0; padding:0; height:100%; }
 
 <script type="module">
 
-import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.29.0/+esm";
+import * as duckdb from "https://cdn.jsdelivr.net/npm/@duckdb/duckdb-wasm@1.32.0/+esm";
 
 const MIN_ZOOM = 13;
 
@@ -158,8 +158,14 @@ const logger = new duckdb.ConsoleLogger();
 const db = new duckdb.AsyncDuckDB(logger, worker);
 await db.instantiate(bundle.mainModule);
 
-const conn = await db.connect();
+await db.open({
+  filesystem: {
+    forceFullHTTPReads: false,
+    forceFullHttpReads: false
+  }
+});
 
+const conn = await db.connect();
 await conn.query("INSTALL spatial;");
 await conn.query("LOAD spatial;");
 

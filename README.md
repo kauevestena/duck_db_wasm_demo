@@ -134,11 +134,13 @@ This query:
 
 ---
 
-# ⚠️ Current Limitations
+# ⚠️ Current Limitations (Updated)
 
 * Country detection uses a **simple longitude heuristic**
 * Large countries may still contain many buildings
-* DuckDB-WASM currently lacks direct **S3 filesystem support**
+* Spatial predicate pushdown (e.g., `ST_Intersects`) is still not fully natively optimized for row group pruning in Parquet reader, requiring explicit structural bounding-box checks (e.g., `bbox.xmin`, etc.) to trigger range requests and avoid full file downloads.
+
+Note: With the upgrade to **DuckDB-WASM v1.32.0**, direct **S3 filesystem API support** and **Origin Private File System (OPFS)** support are now natively integrated.
 
 Future improvements could include:
 
