@@ -60,12 +60,12 @@ async function runTest() {
             return status === 'DuckDB ready' || status.includes('buildings');
         });
 
-        console.log("DuckDB ready. Setting map to Liechtenstein...");
+        console.log("DuckDB ready. Setting map to Sao Paulo...");
 
-        // Set the map center to Vaduz, Liechtenstein
+        // Set the map center to Sao Paulo
         await page.evaluate(() => {
             window.map.setZoom(18);
-            window.map.setCenter([9.5215, 47.1415]);
+            window.map.setCenter([-46.6333, -23.5505]);
 
             setInterval(() => {
                 const status = document.getElementById('status').innerText;
@@ -77,7 +77,7 @@ async function runTest() {
             }, 3000);
         });
 
-        console.log("Waiting for remote LIE buildings to load...");
+        console.log("Waiting for remote BRA buildings to load...");
         await page.waitForFunction(() => {
             const status = document.getElementById('status').innerText;
             return (/^\d+ buildings$/.test(status)) || /^Error/.test(status);
